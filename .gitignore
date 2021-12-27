@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# config file
+/config/config.yaml
+/config/telegram.yaml
+
 # Distribution / packaging
 .Python
 build/
