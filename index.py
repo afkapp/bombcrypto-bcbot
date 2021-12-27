@@ -2,9 +2,6 @@ from cv2 import cv2
 from pyclick import HumanClicker
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
-
-from src.date import dateFormatted
-
 import numpy as np
 import mss
 import pyautogui
@@ -135,6 +132,10 @@ chest2 = cv2.imread('./images/targets/chest2.png')
 chest3 = cv2.imread('./images/targets/chest3.png')
 chest4 = cv2.imread('./images/targets/chest4.png')
 
+def dateFormatted(format = '%Y-%m-%d %H:%M:%S'):
+  datetime = time.localtime()
+  formatted = time.strftime(format, datetime)
+  return formatted
 
 def logger(message, telegram=False, emoji=None):
     formatted_datetime = dateFormatted()
