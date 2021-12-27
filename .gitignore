@@ -10,6 +10,9 @@ __pycache__/
 /config/config.yaml
 /config/telegram.yaml
 
+# Images
+/images/targets
+
 # Distribution / packaging
 .Python
 build/
