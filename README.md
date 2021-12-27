@@ -7,8 +7,13 @@ It is fully open source and free, compatible with Windows and Ubuntu.
 
 Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
-- 24/Dec/21
+``` 
+- 27/Dec/21
              (15%)        (30%)         (50%)        (70%)      (85%)     (100%)
 [--------------|------------|-------------|------------|----------|---------] ($500)
         |
        $45
+```
+
+## 🎁 Donation:
+### BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a
