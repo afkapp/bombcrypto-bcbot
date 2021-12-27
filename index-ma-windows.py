@@ -2,7 +2,6 @@ from cv2 import cv2
 from pyclick import HumanClicker
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
-
 import numpy as np
 import mss
 import pyautogui
@@ -68,12 +67,15 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.0.6' #Required config version
+config_version = '1.0.7' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
+
+herald_active= streamConfig['herald_active']
+key_herald = streamConfig['key-herald']
 
 telegramIntegration = False
 try:
@@ -86,7 +88,6 @@ try:
     telegramMapReport = streamConfigTelegram['enable_map_report']
     telegramFormatImage = streamConfigTelegram['format_of_images']
     stream.close()
-    #telegram_api = '&token=', telegramBotToken, '&cid=', telegramChatId
 except FileNotFoundError:
     print('Info: Telegram not configure, rename EXAMPLE-telegram.yaml to telegram.yaml')
 
@@ -196,6 +197,10 @@ if telegramIntegration == True:
             update.message.reply_text(
                 f'💖 Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0')
 
+        def send_herald(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text(
+                f'📲 BTS Herald is coming soon. Keep your BCBOT up to date.')
+
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger('Shutting down bot...', telegram=True, emoji='🛑')
             os._exit(0)
@@ -207,6 +212,7 @@ if telegramIntegration == True:
             ['bcoin', send_bcoin],
             ['donation', send_wallet],
             ['invite', send_telegram_invite],
+            ['herald', send_herald],
             ['stop', send_stop]
         ]
 
@@ -373,6 +379,11 @@ def sendMapReport():
     clickButton(x_button_img)
     logger('Map report sent', telegram=True, emoji='📄')
     return True
+
+#BTS Herald - Get a notification if the bot stops 
+def herald():
+    if herald_active == True and key_herald != '':
+        herald = requests.get('https://herald.btscenter.net/monitor/?app=bcbot&key='+key_herald)
         
 def clickButton(img, name=None, timeout=3, threshold=configThreshold['default']):
     if not name is None:
@@ -636,6 +647,7 @@ def goToTreasureHunt():
         if clickButton(x_button_img):
             sleep(1, 3)
             clickButton(teasureHunt_icon_img)
+            herald()
     if currentScreen() == "unknown" or currentScreen() == "login":
         checkLogout()
 
