@@ -5,6 +5,7 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 import numpy as np
 import mss
 import pyautogui
+import pygetwindow
 import telegram
 import os
 import time
