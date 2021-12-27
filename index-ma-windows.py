@@ -30,7 +30,7 @@ banner = """
 #─████████████████─██████████████─████████████████─██████████████─────██████─────#
 #────────────────────────────────────────────────────────────────────────────────#
 #********************************************************************************#
-#********************* Please consider buying me a coffee 😁 ********************#
+#*********************** Please consider buying me a coffee *********************#
 #********************************************************************************#
 #******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
 #********************************************************************************#
@@ -44,7 +44,7 @@ banner = """
 print(banner)
 
 def readConfig():
-    with open("./config/config.yaml", 'r', encoding="utf8") as s:
+    with open("./config/config.yaml", 'r', encoding='utf8') as s:
         stream = s.read()
     return yaml.safe_load(stream)
 
@@ -79,7 +79,7 @@ key_herald = streamConfig['key-herald']
 
 telegramIntegration = False
 try:
-    stream = open("./config/telegram.yaml", 'r', encoding="utf8")
+    stream = open("./config/telegram.yaml", 'r', encoding='utf8')
     streamConfigTelegram = yaml.safe_load(stream)
     telegramIntegration = streamConfigTelegram['telegram_enable']
     telegramChatId = streamConfigTelegram['telegram_chat_id']
