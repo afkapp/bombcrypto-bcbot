@@ -7,6 +7,8 @@ It is fully open source and free, compatible with Windows and Ubuntu.
 
 Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
+## Looking for official support? Hire with us: https://t.me/afkapp
+
 ## 🎁 Donation:
 ### BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a
 
