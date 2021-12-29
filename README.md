@@ -7,7 +7,7 @@ It is fully open source and free, compatible with Windows and Ubuntu.
 
 Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
-### HOW TO INSTALL (WINDOWS):
+### HOW TO INSTALL BCBOT FOR SINGLE ACCOUNT (WINDOWS):
 
 1) Download Python 3.10.1: https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe
 2) Install the Python **AND MARK THE OPTION** Add Python 3.10 to PATH.
@@ -23,7 +23,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 ## Looking for official support? Hire with us: https://t.me/afkapp
 
 ## 🎁 Donation:
-Do you liked? Please contribute for the project to stay free and receive new updates. 
+Do you liked? Please contribute to helping the project stay free and receive updates. 
 ### BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a
 
 ``` 
