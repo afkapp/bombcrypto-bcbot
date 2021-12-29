@@ -18,12 +18,12 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 7) Open the command prompt (CMD) as administrator.
 8) Go to your BCBOT directory, in our suggestion: cd C:\BCBOT
 9) RUN: pip install -r requirements.txt --force
-10) DONE RUN BCBOT: python C:\BCBOT\index.py
+10) DONE. RUN BCBOT: python C:\BCBOT\index.py
 
 ### HOW TO INSTALL BCBOT FOR MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
 1) Perform previously steps (1 through 9).
-2) DONE RUN BCBOT: python C:\BCBOT\index-ma-windows.py
+2) DONE. RUN BCBOT: python C:\BCBOT\index-ma-windows.py
 
 **NOTES**
 - We get better results with Firefox.
