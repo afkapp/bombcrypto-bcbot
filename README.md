@@ -32,7 +32,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 ## Looking for official support? Hire with us: https://t.me/afkapp
 
 ## 🎁 Donation:
-Do you liked? Please contribute to helping the project stay free and receive updates. 
+Do you liked? Please contribute to help the project stay free and receive updates. 
 ### BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a
 
 ``` 
