@@ -9,7 +9,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
 ## Looking for official support? Hire with us: https://t.me/afkapp
 
-###HOW TO INSTALL:
+### HOW TO INSTALL:
 
 1) Download Python 3.10.1: https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe
 2) Install the Python **AND MARK THE OPTION** Add Python 3.10 to PATH.
