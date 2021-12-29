@@ -7,8 +7,6 @@ It is fully open source and free, compatible with Windows and Ubuntu.
 
 Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
-## Looking for official support? Hire with us: https://t.me/afkapp
-
 ### HOW TO INSTALL (WINDOWS):
 
 1) Download Python 3.10.1: https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe
@@ -21,6 +19,8 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 8) Go to your BCBOT directory, in our suggestion: cd C:\BCBOT
 9) RUN: pip install -r requirements.txt --force
 10) DONE RUN BCBOT: python C:\BCBOT\index.py
+
+## Looking for official support? Hire with us: https://t.me/afkapp
 
 ## 🎁 Donation:
 Do you liked? Please contribute for the project to stay free and receive new updates. 
