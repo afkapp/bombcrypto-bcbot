@@ -27,7 +27,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
 **NOTES**
 - We get better results with Firefox.
-- Open up to 5 Firefox windows and make each window maximized.
+- Open up to 5 Firefox windows and make each window maximized ("big size").
 
 ## Looking for official support? Hire with us: https://t.me/afkapp
 
