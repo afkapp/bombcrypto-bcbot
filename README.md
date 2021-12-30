@@ -1,13 +1,13 @@
 # BCBOT Community Edition (BombCrypto BOT)
-**[en] Version FREE, open source and WITHOUT technical support.**
+**[en] Version FREE, open source and WITHOUT TECHNICAL SUPPORT.**
 
-**[pt_br] Versão gratuita, código aberto E SEM suporte técnico.**
+**[pt_br] Versão gratuita, código aberto E SEM SUPORTE TÉCNICO.**
 
 This is a python bot to automate BombCrypto game.
 
 Logs in to the game, reconnects when needed, closes error warnings, sends heroes to work or home automatically, has Telegram integration and lets you know by message or call if the farm stop.
 
-It is fully open source and free, compatible with Windows and Ubuntu.
+It's free, open source, WITHOUT technical support, compatible with Windows and Linux (except multi account on Linux).
 
 Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 
