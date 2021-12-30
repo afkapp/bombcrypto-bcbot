@@ -1,5 +1,6 @@
 # BCBOT Community Edition (BombCrypto BOT)
 **[en] Version FREE, open source and WITHOUT technical support.**
+
 **[pt_br] Versão gratuita, código aberto E SEM suporte técnico.**
 
 This is a python bot to automate BombCrypto game.
