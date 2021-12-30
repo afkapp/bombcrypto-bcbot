@@ -1,5 +1,5 @@
 # BCBOT Community Edition (BombCrypto BOT)
-**FREE and WITHOUT technical support**
+**Version FREE, open source and WITHOUT technical support.**
 
 This is a python bot to automate BombCrypto game.
 
@@ -30,8 +30,6 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 **NOTES**
 - We get better results with Firefox.
 - Open up to 5 Firefox windows and make each window maximized ("big size").
-
-## Looking for official support? Hire with us: https://t.me/afkapp
 
 ## 🎁 Donation:
 Do you liked? Please contribute to help the project stay free and receive updates. 
