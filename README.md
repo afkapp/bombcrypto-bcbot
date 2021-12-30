@@ -1,4 +1,6 @@
-# BombCrypto BCBOT
+# BCBOT Community Edition (BombCrypto BOT)
+**FREE and WITHOUT technical support**
+
 This is a python bot to automate BombCrypto game.
 
 Logs in to the game, reconnects when needed, closes error warnings, sends heroes to work or home automatically, has Telegram integration and lets you know by message or call if the farm stop.
