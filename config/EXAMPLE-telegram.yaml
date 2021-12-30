@@ -13,7 +13,7 @@
 #─████████████████─██████████████─████████████████─██████████████─────██████─────#
 #────────────────────────────────────────────────────────────────────────────────#
 #********************************************************************************#
-#********************* Please consider buying me a coffee 😁 ********************#
+#********************* Please consider buying me a coffee :) ********************#
 #********************************************************************************#
 #******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
 #********************************************************************************#
@@ -32,15 +32,20 @@
 #                                  ::.   .:::::-.
 #                                  .        .:-:
 
-# [en] Start a Telegram conversation with the @btsherald_bot and type /id to get your_chat_id.
-# [pt_br] Inicie uma conversa no Telegram com @btsherald_bot e digite /id para pegar o your_chat_id.
-
-# [en] Start a Telegram conversation with @botfather and type /newbot to get your_telegram_bot_token.
-# [pt_br] Inicie uma conversa no Telegram com @botfather e digite /newbot para pegar o your_telegram_bot_token.
-
+# [en] TELEGRAM DISABLE = false | TELEGRAM ENABLE = true
+# [pt_BR] TELEGRAM DESABILITADO = false | TELEGRAM HABILITADO = true 
 telegram_enable: false
-telegram_chat_id: ["YOUR_CHAT_ID", "YOUR_CHAT_ID2(optional)"]
-telegram_bot_token: "YOUR_TELEGRAM_BOT_TOKEN"
+
+# [en] Get your chat_id with the @btsherald_bot: https://t.me/btsherald_bot (send /id)
+# [pt_BR] Pegue o chat_id com o @btsherald_bot: https://t.me/btsherald_bot (envie /id)
+telegram_chat_id: ["0000000000"]
+
+# [en] Get your token with the @botfather: https://t.me/botfather (send /newbot)
+# [pt_BR] Pegue o token com o @botfather: https://t.me/botfather (envie /newbot)
+telegram_bot_token: "000000000:000000000000000000000"
+
+# [en] REPORT DISABLE = false | REPORT ENABLE = true
+# [pt_BR] RELATÓRIO DESABILITADO = false | RELATÓRIO HABILITADO = true
 enable_coin_report: false
 enable_map_report: false
 format_of_images: "jpg"
@@ -290,11 +295,6 @@ format_of_images: "jpg"
 
 
 
-
-
-
-
-
 # [en_US] PLEASE DON'T CHANGE
 # [pt_BR] POR FAVOR NÃO ALTERE
-version: "1.0.6"
+version: "1.0.8"
