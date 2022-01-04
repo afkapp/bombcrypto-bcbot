@@ -18,7 +18,8 @@
 #******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
 #********************************************************************************#
 
-  lang: 'en'          #----> Bot language (in development)
+  lang: 'en'              #----> Bot language (in development)
+  multi-account: false    #----> true for enable multi account feature
   
 #************************************(OPTIONAL)**********************************#
 #   ██████╗░████████╗░██████╗  ██╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░██████╗░  #
@@ -49,7 +50,7 @@
     #
     # [pt_BR] Intervalo de tempo para verificar se há heróis disponíveis para trabalhar
     # Valor padrão (em minutos): [10,15] [valor minimo, valor maximo]
-    send_heroes_for_work: [10,15]
+    send_heroes_for_work: 10
     
     # [en_US] Time interval to update heroes position in the map
     # Default value (in minutes): [3,5] [min value, max value]
@@ -57,6 +58,13 @@
     # [pt_BR] Intervalo de tempo para atualizar a posição dos heróis no mapa
     # Valor padrão (em minutos): [3,5] [valor minimo, valor maximo]
     refresh_heroes_positions: [3,5]
+
+    # [en_US] Time interval to check for new maps
+    # Default value (in minutes): 2
+    #
+    # [pt_BR] Intervalo de tempo para verificar por novos mapas
+    # Valor padrão (em segundos): 2
+    check_for_new_map_button: 2
 
     # [en_US] Time interval between movements
     # Default value (in seconds): 1 
@@ -91,9 +99,54 @@
     # [en_US]
     # Default value: 0.75
     #
+        # [en_US]
+    # Default value: 0.7
+    #
     # [pt_BR]
-    # Valor padrão: 0.75
-    default: 0.75
+    # Valor padrão: 0.7
+    default: 0.7
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    commom: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    rare: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    super_rare: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    epic: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    legendary: 0.8
+
+    # [en_US]
+    # Default value: 0.8
+    #
+    # [pt_BR]
+    # Valor padrão: 0.8
+    super_legendary: 0.8
 
     # [en_US]
     # Default value: 0.5
@@ -158,8 +211,8 @@
   # Default value: 3
   #
   # [pt_BR]
-  # Valor padrão: 3
-  scroll_attempts: 3
+  # Valor padrão: 5
+  scroll_attempts: 5
 
   # [en_US]
   # Default value: true
@@ -207,10 +260,10 @@
   monitor_to_use: 1
 
   # [en_US] show emojis in console
-  # Default value: false
+  # Default value: False
   #
   # [pt_BR] mostra emojis no console 
-  # Valor padrão: false
+  # Valor padrão: False
   emoji: False
 
   # [en_US] show more information
@@ -242,59 +295,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   # [en] PLEASE DON'T CHANGE
   # [pt_br] POR FAVOR NÃO ALTERE
-  version: "1.0.8"
+  version: "1.1.0"
