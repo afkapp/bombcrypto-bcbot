@@ -194,7 +194,7 @@ if telegramIntegration == True:
 
         def send_id(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'🆔 Your id is: {update.effective_user.id}')
+                f'🆔 Get your Chat-ID: https://t.me/btsherald_bot')
 
         def send_map(update: Update, context: CallbackContext) -> None:
             update.message.reply_text('🔃 Proccessing...')
@@ -222,16 +222,21 @@ if telegramIntegration == True:
             update.message.reply_text(
                 f'🇺🇸 BTS IT Solutions is a hosting provider operating on the internet since 2008. With a VPS service, your BOT works 24/7 in our structure, without depending of your computer/laptop, you can access from anywhere by remote connection, this it avoids having to buy hardware exclusively for the BOT and the risks of having losses with outages of power and internet that occur in domestic use. We deliver optimized and with the BCBOT installed. Make your farm professional:  \n\n 🇧🇷 A BTS IT Solutions é um provedor de hospedagem que atua na internet desde 2008. Com um serviço de VPS, o seu BOT funciona 24/7 em nossa estrutura, sem depender do seu computador, você pode acessar de qualquer lugar por conexão remota, ainda evita de ter que comprar equipamento exclusivamente para o BOT e os riscos de ter prejuízo com queda de energia e internet que ocorrem no uso doméstico. Entregamos optimizado e com o BCBOT instalado. Torne o seu farm profissional: \n\n https://vps.btscenter.net')
 
-
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger('Shutting down bot...', telegram=True, emoji='🛑')
             os._exit(0)
+
+        def send_refresh(update: Update, context: CallbackContext) -> None:
+            pyautogui.hotkey('ctrl', 'shift', 'r')
+            waitForImage(connect_wallet_btn_img)
+            login()
                
         commands = [
             ['print', send_print],
             ['id', send_id],
             ['map', send_map],
             ['bcoin', send_bcoin],
+            ['refresh', send_refresh],
             ['donation', send_wallet],
             ['invite', send_telegram_invite],
             ['herald', send_herald],
@@ -1024,7 +1029,7 @@ def bcbotmaw():
 
 
     except PyGetWindowException:
-        print('--> Error: PyGetWindow.')
+        logger('--> Error: Multi Account (PyGetWindow): Trying to resolve, check your farm.', telegram=False, emoji='💥')
         bcbotmaw() #Try again
 
 def main():
@@ -1033,7 +1038,7 @@ def main():
     #input('Press Enter to start the bot...\n')
     #logger('Starting bot...', telegram=True, emoji='🤖')
     logger('Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
-    logger('Commands: \n\n /print \n /map \n /bcoin \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service', telegram=True, emoji='ℹ️')
+    logger('Commands: \n\n /print \n /map \n /bcoin \n /refresh \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service', telegram=True, emoji='ℹ️')
 
     if multi_account != True and os.name == 'nt':
         bcbotsingle() 
