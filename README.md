@@ -24,10 +24,10 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 9) RUN: pip install -r requirements.txt --force
 10) DONE. RUN BCBOT: python C:\BCBOT\index.py
 
-### HOW TO INSTALL BCBOT FOR MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
+### MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
-1) Perform previously steps (1 through 9).
-2) DONE. RUN BCBOT: python C:\BCBOT\index-ma.py
+1) Enable this feature on config.yaml (multi-account: true).
+2) DONE. RUN BCBOT: python C:\BCBOT\index.py
 
 **NOTES**
 - We get better results with Firefox.
