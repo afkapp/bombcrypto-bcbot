@@ -7,6 +7,23 @@ import mss
 import pyautogui
 import telegram
 import os
+
+if os.name == 'nt':
+    import pygetwindow as bcbotma
+    from pygetwindow import PyGetWindowException
+
+if os.name == 'posix':
+    print('The complete file will be posted after this project receives 500$ in donations.')
+    print('O arquivo completo será postado após este projeto receber 500$ em doações.')
+    print('سيتم نشر الملف كاملاً بعد أن يتلقى هذا المشروع تبرعًا بقيمة 500 دولار أمريكي.')
+    print('BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a')
+    print('https://github.com/afkapp/bombcrypto-bcbot')
+    input('Press Enter to continue without multi account...\n') 
+
+if os.name != 'nt' and os.name != 'posix':
+    print('Your operating system is unsupported. ')
+    os._exit(0)
+
 import time
 import sys
 import yaml
@@ -66,7 +83,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.0.8' #Required config version
+config_version = '1.1.0' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -75,6 +92,7 @@ if config_version > config_version_local:
 
 herald_active= streamConfig['herald_active']
 key_herald = streamConfig['key-herald']
+multi_account = streamConfig['multi-account']
 
 telegramIntegration = False
 try:
@@ -203,6 +221,7 @@ if telegramIntegration == True:
         def send_vps(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
                 f'🇺🇸 BTS IT Solutions is a hosting provider operating on the internet since 2008. With a VPS service, your BOT works 24/7 in our structure, without depending of your computer/laptop, you can access from anywhere by remote connection, this it avoids having to buy hardware exclusively for the BOT and the risks of having losses with outages of power and internet that occur in domestic use. We deliver optimized and with the BCBOT installed. Make your farm professional:  \n\n 🇧🇷 A BTS IT Solutions é um provedor de hospedagem que atua na internet desde 2008. Com um serviço de VPS, o seu BOT funciona 24/7 em nossa estrutura, sem depender do seu computador, você pode acessar de qualquer lugar por conexão remota, ainda evita de ter que comprar equipamento exclusivamente para o BOT e os riscos de ter prejuízo com queda de energia e internet que ocorrem no uso doméstico. Entregamos optimizado e com o BCBOT instalado. Torne o seu farm profissional: \n\n https://vps.btscenter.net')
+
 
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger('Shutting down bot...', telegram=True, emoji='🛑')
@@ -896,15 +915,8 @@ def checkThreshold():
         configThreshold = newConfigThreshold
         logger('New Threshold applied', telegram=False, emoji='⚙️')
 
-
-def main():
-
-    checkUpdates()
-    input('Press Enter to start the bot...\n')
-    logger('Starting bot...', telegram=True, emoji='🤖')
-    logger('Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
-    logger('Commands: \n\n /print \n /map \n /bcoin \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service', telegram=True, emoji='ℹ️')
-
+def bcbotsingle():
+    print('Multi account feature is DISABLE on config.yaml.')
     last = {
         "login": 0,
         "heroes": 0,
@@ -950,9 +962,84 @@ def main():
 
         checkLogout()
         sys.stdout.flush()
-        time.sleep(general_check_time)
+        time.sleep(1)
         checkThreshold()
 
+def bcbotmaw():
+    print('Multi account feature is enable on config.yaml.')
+
+    windows = []
+    
+    for w in bcbotma.getWindowsWithTitle('bombcrypto'):
+        windows.append({
+            "window": w,
+            "login" : 0,
+            "heroes" : 0,
+            "new_map" : 0,
+            "refresh_heroes" : 0
+            })
+
+    while True:
+        if currentScreen() == "login":
+            login()
+
+        handleError()
+
+        now = time.time()
+        
+        for last in windows:
+            last["window"].activate()
+            time.sleep(2)
+        
+            if now - last["heroes"] > next_refresh_heroes * 60:
+                last["heroes"] = now
+                last["refresh_heroes"] = now
+                getMoreHeroes()
+
+            if currentScreen() == "main":
+                if clickButton(teasureHunt_icon_img):
+                    logger('Entering treasure hunt', emoji='▶️')
+                    last["refresh_heroes"] = now
+
+            if currentScreen() == "thunt":
+                if clickButton(new_map_btn_img):
+                    last["new_map"] = now
+                    clickNewMap()
+
+            if currentScreen() == "character":
+                clickButton(x_button_img)
+                sleep(1, 3)
+
+            if now - last["refresh_heroes"] > next_refresh_heroes_positions * 60:
+                last["refresh_heroes"] = now
+                refreshHeroesPositions()
+
+            sys.stdout.flush()
+            time.sleep(1)
+
+            checkLogout()
+            checkThreshold()
+
+
+    #except PyGetWindowException:
+        #print('Error: pygetwindow.')
+
+def main():
+
+    checkUpdates()
+    #input('Press Enter to start the bot...\n')
+    #logger('Starting bot...', telegram=True, emoji='🤖')
+    logger('Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
+    logger('Commands: \n\n /print \n /map \n /bcoin \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service', telegram=True, emoji='ℹ️')
+
+    if multi_account != True and os.name == 'nt':
+        bcbotsingle() 
+    
+    if multi_account == True and os.name == 'nt':
+        bcbotmaw() 
+
+    if os.name == 'posix':
+        bcbotsingle()  
 
 if __name__ == '__main__':
     try:
