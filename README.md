@@ -27,7 +27,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 ### HOW TO INSTALL BCBOT FOR MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
 1) Perform previously steps (1 through 9).
-2) DONE. RUN BCBOT: python C:\BCBOT\index-ma-windows.py
+2) DONE. RUN BCBOT: python C:\BCBOT\index-ma.py
 
 **NOTES**
 - We get better results with Firefox.
