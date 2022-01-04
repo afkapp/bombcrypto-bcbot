@@ -968,10 +968,12 @@ def bcbotsingle():
 def bcbotmaw():
     print('Multi account feature is enable on config.yaml.')
 
-    windows = []
+    try:
     
-    for w in bcbotma.getWindowsWithTitle('bombcrypto'):
-        windows.append({
+        windows = []
+    
+        for w in bcbotma.getWindowsWithTitle('bombcrypto'):
+            windows.append({
             "window": w,
             "login" : 0,
             "heroes" : 0,
@@ -979,17 +981,17 @@ def bcbotmaw():
             "refresh_heroes" : 0
             })
 
-    while True:
-        if currentScreen() == "login":
-            login()
+        while True:
+            if currentScreen() == "login":
+                login()
 
-        handleError()
+            handleError()
 
-        now = time.time()
+            now = time.time()
         
-        for last in windows:
-            last["window"].activate()
-            time.sleep(2)
+            for last in windows:
+                last["window"].activate()
+                time.sleep(2)
         
             if now - last["heroes"] > next_refresh_heroes * 60:
                 last["heroes"] = now
@@ -1021,8 +1023,9 @@ def bcbotmaw():
             checkThreshold()
 
 
-    #except PyGetWindowException:
-        #print('Error: pygetwindow.')
+    except PyGetWindowException:
+        print('--> Error: PyGetWindow.')
+        bcbotmaw() #Try again
 
 def main():
 
