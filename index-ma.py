@@ -14,10 +14,15 @@ if os.name == 'nt':
     import pygetwindow as bcbotma
 
 if os.name == 'posix':
-    print('The complete file will be posted after this project receives 200$ in donations.')
-    print('O arquivo completo será postado após este projeto receber 200$ em doações.')
-    print('سيتم نشر الملف كاملاً بعد أن يتلقى هذا المشروع تبرعًا بقيمة 200 دولار أمريكي.')
+    print('The complete file will be posted after this project receives 500$ in donations.')
+    print('O arquivo completo será postado após este projeto receber 500$ em doações.')
+    print('سيتم نشر الملف كاملاً بعد أن يتلقى هذا المشروع تبرعًا بقيمة 500 دولار أمريكي.')
     print('BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a')
+    print('https://github.com/afkapp/bombcrypto-bcbot')
+    os._exit(0)
+
+if os.name != 'nt' and os.name != 'posix':
+    print('Your operating system is unsupported. ')
     os._exit(0)
 
 import time
@@ -965,11 +970,11 @@ def main():
                 last["refresh_heroes"] = now
                 refreshHeroesPositions()
 
-            checkLogout()
             sys.stdout.flush()
-            time.sleep(general_check_time)
-            checkThreshold()
+            time.sleep(1)
 
+            checkLogout()
+            checkThreshold()
 
 if __name__ == '__main__':
     try:
