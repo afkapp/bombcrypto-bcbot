@@ -732,6 +732,7 @@ def login():
 
     if currentScreen() == "main":
         logger('Logged in', telegram=True, emoji='🎉')
+        time.sleep(5)
         return True
     else:
         logger('Login failed, trying again', emoji='😿')
