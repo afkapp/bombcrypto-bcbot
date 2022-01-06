@@ -98,7 +98,7 @@
   #
   threshold:
     # [en_US]
-    # Default value: 0.75
+    # Default value: 0.7
     #
         # [en_US]
     # Default value: 0.7
@@ -150,11 +150,11 @@
     super_legendary: 0.8
 
     # [en_US]
-    # Default value: 0.5
+    # Default value: 0.8
     #
     # [pt_BR]
-    # Valor padrão: 0.5
-    error: 0.5
+    # Valor padrão: 0.8
+    error: 0.8
 
     # [en_US]
     # Default value: 0.8
@@ -297,4 +297,4 @@
 
   # [en] PLEASE DON'T CHANGE
   # [pt_br] POR FAVOR NÃO ALTERE
-  version: "1.1.1"
+  version: "1.1.2"
