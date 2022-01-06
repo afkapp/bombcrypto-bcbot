@@ -37,6 +37,7 @@
 
   herald_active: false  
   key-herald: '00000000000000'
+  label: 'BCBOT-1'
     
 #********************************************************************************#
 
@@ -294,7 +295,6 @@
 
 
 
-
   # [en] PLEASE DON'T CHANGE
   # [pt_br] POR FAVOR NÃO ALTERE
-  version: "1.1.0"
+  version: "1.1.1"
