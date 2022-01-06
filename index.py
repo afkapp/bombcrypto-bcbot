@@ -84,7 +84,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.1' #Required config version
+config_version = '1.1.2' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
