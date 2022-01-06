@@ -13,15 +13,16 @@ if os.name == 'nt':
     from pygetwindow import PyGetWindowException
 
 if os.name == 'posix':
-    print('The complete file will be posted after this project receives 500$ in donations.')
-    print('O arquivo completo será postado após este projeto receber 500$ em doações.')
-    print('سيتم نشر الملف كاملاً بعد أن يتلقى هذا المشروع تبرعًا بقيمة 500 دولار أمريكي.')
+    print('The multi account will be Linux compatible after the project receives $500 in donations.')
+    print('O multi account será compatível com Linux após o projeto receber $500 em doações.')
+    print('سيكون الحساب المتعدد متوافقًا مع Linux بعد أن يتلقى المشروع تبرعات بقيمة 500 دولار.')
     print('BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a')
     print('https://github.com/afkapp/bombcrypto-bcbot')
     input('Press Enter to continue without multi account...\n') 
 
 if os.name != 'nt' and os.name != 'posix':
     print('Your operating system is unsupported. ')
+    print('O seu sistema operacional não é compatível. ')
     os._exit(0)
 
 import time
@@ -83,7 +84,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.0' #Required config version
+config_version = '1.1.1' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -92,6 +93,7 @@ if config_version > config_version_local:
 
 herald_active= streamConfig['herald_active']
 key_herald = streamConfig['key-herald']
+herald_label = streamConfig['label']
 multi_account = streamConfig['multi-account']
 
 telegramIntegration = False
@@ -411,7 +413,7 @@ def sendMapReport():
 #BTS Herald - Get a notification if the bot stops 
 def herald():
     if herald_active == True and key_herald != '':
-        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&key='+key_herald)
+        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&label='+herald_label+'&key='+key_herald)
         
 def clickButton(img, name=None, timeout=3, threshold=configThreshold['default']):
     if not name is None:
