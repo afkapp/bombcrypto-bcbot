@@ -1,1 +1,300 @@
+  # Establezca lang: 'es' dentro de config.yaml para definir el idioma español
+  afkapp_bcbot_01: "The multi account will be Linux compatible after the project receives $500 in donations."
+  afkapp_bcbot_02: "BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a"
+  afkapp_bcbot_03: "https://github.com/afkapp/bombcrypto-bcbot"
+  afkapp_bcbot_04: "Error: Please update the config.yaml file."
+  afkapp_bcbot_05: "Info: Telegram not configure, rename EXAMPLE-telegram.yaml to telegram.yaml"
+  afkapp_bcbot_06: "Initializing Telegram..."
+  afkapp_bcbot_07: "Proccessing..."
+  afkapp_bcbot_08: "Get your Chat-ID:"
+  afkapp_bcbot_09: "An error has occurred"
+  afkapp_bcbot_10: "Thank You!"
+  afkapp_bcbot_11: "Join us on BCBOT Telegram group:"
+  afkapp_bcbot_12: "The BTS Herald is a monitoring service, which will notify you if the BOT/farm stops working. Get started today for FREE: \n\n https://www.btscenter.net/bts-herald"
+  afkapp_bcbot_13: "BTS IT Solutions is a hosting provider operating on the internet since 2008. With a VPS service, your BOT works 24/7 in our structure, without depending of your computer/laptop, you can access from anywhere by remote connection, this it avoids having to buy hardware exclusively for the BOT and the risks of having losses with outages of power and internet that occur in domestic use. We deliver optimized and with the BCBOT installed. Make your farm professional:"
+  afkapp_bcbot_14: "Shutting down bot..."
+  afkapp_bcbot_15: "Bot not initialized, see configuration file"
+  afkapp_bcbot_16: "Error to send telegram message. See configuration file"
+  afkapp_bcbot_17: "Possible quantity chest per type"
+  afkapp_bcbot_18: "Possible amount:"
+  afkapp_bcbot_19: "Telegram offline"
+  afkapp_bcbot_20: "BCoin report sent"
+  afkapp_bcbot_21: "Error finding chests"
+  afkapp_bcbot_22: "Map report sent"
+  afkapp_bcbot_23: "Too many hero clicks, try to increase the go_to_work_btn threshold"
+  afkapp_bcbot_24: "Clicking in"
+  afkapp_bcbot_25: "heroes detected."
+  afkapp_bcbot_26: "green bars detected"
+  afkapp_bcbot_27: "buttons detected"
+  afkapp_bcbot_28: "heroes with green bar detected."
+  afkapp_bcbot_29: "FULL bars detected"
+  afkapp_bcbot_30: "heroes with FULL bar detected."
+  afkapp_bcbot_31: "Refreshing heroes positions"
+  afkapp_bcbot_32: "Connect wallet button detected, logging in!"
+  afkapp_bcbot_33: "Metamask locked! But login with password is disabled, exiting"
+  afkapp_bcbot_34: "Found unlock button. Waiting for password"
+  afkapp_bcbot_35: "Unlock button clicked"
+  afkapp_bcbot_36: "Found sign button. Waiting to check if logged in"
+  afkapp_bcbot_37: "Found glitched sign button. Waiting to check if logged in"
+  afkapp_bcbot_38: "Logged in"
+  afkapp_bcbot_39: "Login failed, trying again"
+  afkapp_bcbot_40: "+3 login attempts, retrying"
+  afkapp_bcbot_41: "Metamask is glitched, fixing"
+  afkapp_bcbot_42: "Error detected, trying to resolve"
+  afkapp_bcbot_43: "Refreshing page"
+  afkapp_bcbot_44: "Search for heroes to work"
+  afkapp_bcbot_45: "Sending heroes with full stamina bar to work!"
+  afkapp_bcbot_46: "Sending heroes with green stamina bar to work!"
+  afkapp_bcbot_47: "Sending all heroes to work!"
+  afkapp_bcbot_48: "total heroes sent since the bot started"
+  afkapp_bcbot_49: "Logout detected"
+  afkapp_bcbot_50: "Sign button detected"
+  afkapp_bcbot_51: "New map"
+  afkapp_bcbot_52: "Version not found in github, securety problem"
+  afkapp_bcbot_53: "Git Version:"
+  afkapp_bcbot_54: "Version installed:"
+  afkapp_bcbot_55: "New version"
+  afkapp_bcbot_56: "available, please update"
+  afkapp_bcbot_57: "Version not found, update is required"
+  afkapp_bcbot_58: "New Threshold applied"
+  afkapp_bcbot_59: "Multi account feature is DISABLE on config.yaml."
+  afkapp_bcbot_60: "Entering treasure hunt"
+  afkapp_bcbot_61: "Multi account feature is ENABLE on config.yaml."
+  afkapp_bcbot_62: "Error: Multi Account (PyGetWindow): Trying to resolve, check your farm."
+  afkapp_bcbot_63: "Commands: \n\n /print \n /map \n /bcoin \n /refresh \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# [en] PLEASE DON'T CHANGE
+  version: "1.0.0"
