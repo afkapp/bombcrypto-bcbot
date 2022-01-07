@@ -67,6 +67,7 @@ def readConfig():
 
 try:
     streamConfig = readConfig()
+    afkapplang = streamConfig['lang']
     configThreshold = streamConfig['threshold']
     configTimeIntervals = streamConfig['time_intervals']
     metamaskData = streamConfig['metamask']
@@ -152,6 +153,81 @@ chest2 = cv2.imread('./images/targets/chest2.png')
 chest3 = cv2.imread('./images/targets/chest3.png')
 chest4 = cv2.imread('./images/targets/chest4.png')
 
+def readAfkAppLang():
+    with open("./lang/"+afkapplang+".yaml", 'r', encoding='utf8') as l:
+        stream = l.read()
+    return yaml.safe_load(stream)
+
+try:
+    streamLang = readAfkAppLang()
+    afkapp_bcbot_01 = streamLang['afkapp_bcbot_01']
+    afkapp_bcbot_02 = streamLang['afkapp_bcbot_02']
+    afkapp_bcbot_03 = streamLang['afkapp_bcbot_03']
+    afkapp_bcbot_04 = streamLang['afkapp_bcbot_04']
+    afkapp_bcbot_05 = streamLang['afkapp_bcbot_05']
+    afkapp_bcbot_06 = streamLang['afkapp_bcbot_06']
+    afkapp_bcbot_07 = streamLang['afkapp_bcbot_07']
+    afkapp_bcbot_08 = streamLang['afkapp_bcbot_08']
+    afkapp_bcbot_09 = streamLang['afkapp_bcbot_09']
+    afkapp_bcbot_10 = streamLang['afkapp_bcbot_10']
+    afkapp_bcbot_11 = streamLang['afkapp_bcbot_11']
+    afkapp_bcbot_12 = streamLang['afkapp_bcbot_12']
+    afkapp_bcbot_13 = streamLang['afkapp_bcbot_13']
+    afkapp_bcbot_14 = streamLang['afkapp_bcbot_14']
+    afkapp_bcbot_15 = streamLang['afkapp_bcbot_15']
+    afkapp_bcbot_16 = streamLang['afkapp_bcbot_16']
+    afkapp_bcbot_17 = streamLang['afkapp_bcbot_17']
+    afkapp_bcbot_18 = streamLang['afkapp_bcbot_18']
+    afkapp_bcbot_19 = streamLang['afkapp_bcbot_19']
+    afkapp_bcbot_20 = streamLang['afkapp_bcbot_20']
+    afkapp_bcbot_21 = streamLang['afkapp_bcbot_21']
+    afkapp_bcbot_22 = streamLang['afkapp_bcbot_22']
+    afkapp_bcbot_23 = streamLang['afkapp_bcbot_23']
+    afkapp_bcbot_24 = streamLang['afkapp_bcbot_24']
+    afkapp_bcbot_25 = streamLang['afkapp_bcbot_25']
+    afkapp_bcbot_26 = streamLang['afkapp_bcbot_26']
+    afkapp_bcbot_27 = streamLang['afkapp_bcbot_27']
+    afkapp_bcbot_28 = streamLang['afkapp_bcbot_28']
+    afkapp_bcbot_29 = streamLang['afkapp_bcbot_29']
+    afkapp_bcbot_30 = streamLang['afkapp_bcbot_30']
+    afkapp_bcbot_31 = streamLang['afkapp_bcbot_31']
+    afkapp_bcbot_32 = streamLang['afkapp_bcbot_32']
+    afkapp_bcbot_33 = streamLang['afkapp_bcbot_33']
+    afkapp_bcbot_34 = streamLang['afkapp_bcbot_34']
+    afkapp_bcbot_35 = streamLang['afkapp_bcbot_35']
+    afkapp_bcbot_36 = streamLang['afkapp_bcbot_36']
+    afkapp_bcbot_37 = streamLang['afkapp_bcbot_37']
+    afkapp_bcbot_38 = streamLang['afkapp_bcbot_38']
+    afkapp_bcbot_39 = streamLang['afkapp_bcbot_39']
+    afkapp_bcbot_40 = streamLang['afkapp_bcbot_40']
+    afkapp_bcbot_41 = streamLang['afkapp_bcbot_41']
+    afkapp_bcbot_42 = streamLang['afkapp_bcbot_42']
+    afkapp_bcbot_43 = streamLang['afkapp_bcbot_43']
+    afkapp_bcbot_44 = streamLang['afkapp_bcbot_44']
+    afkapp_bcbot_45 = streamLang['afkapp_bcbot_45']
+    afkapp_bcbot_46 = streamLang['afkapp_bcbot_46']
+    afkapp_bcbot_47 = streamLang['afkapp_bcbot_47']
+    afkapp_bcbot_48 = streamLang['afkapp_bcbot_48']
+    afkapp_bcbot_49 = streamLang['afkapp_bcbot_49']
+    afkapp_bcbot_50 = streamLang['afkapp_bcbot_50']
+    afkapp_bcbot_51 = streamLang['afkapp_bcbot_51']
+    afkapp_bcbot_52 = streamLang['afkapp_bcbot_52']
+    afkapp_bcbot_53 = streamLang['afkapp_bcbot_53']
+    afkapp_bcbot_54 = streamLang['afkapp_bcbot_54']
+    afkapp_bcbot_55 = streamLang['afkapp_bcbot_55']
+    afkapp_bcbot_56 = streamLang['afkapp_bcbot_56']
+    afkapp_bcbot_57 = streamLang['afkapp_bcbot_57']
+    afkapp_bcbot_58 = streamLang['afkapp_bcbot_58']
+    afkapp_bcbot_59 = streamLang['afkapp_bcbot_59']
+    afkapp_bcbot_60 = streamLang['afkapp_bcbot_60']
+    afkapp_bcbot_61 = streamLang['afkapp_bcbot_61']
+    afkapp_bcbot_62 = streamLang['afkapp_bcbot_62']
+    afkapp_bcbot_63 = streamLang['afkapp_bcbot_63']
+except FileNotFoundError:
+    print('Error: The language file was not found.')
+    print('Erro: O arquivo do idioma não foi encontrado.')
+    exit()
+
 def dateFormatted(format = '%Y-%m-%d %H:%M:%S'):
   datetime = time.localtime()
   formatted = time.strftime(format, datetime)
@@ -180,14 +256,14 @@ def logger(message, telegram=False, emoji=None):
 # Initialize telegram
 updater = None
 if telegramIntegration == True:
-    logger('Initializing Telegram...', emoji='📱')
+    logger(afkapp_bcbot_06, emoji='📱')
     updater = Updater(telegramBotToken)
 
     try:
         TBot = telegram.Bot(token=telegramBotToken)
 
         def send_print(update: Update, context: CallbackContext) -> None:
-            update.message.reply_text('🔃 Proccessing...')
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
             screenshot = printScreen()
             cv2.imwrite('./logs/print-report.%s' %
                         telegramFormatImage, screenshot)
@@ -196,36 +272,36 @@ if telegramIntegration == True:
 
         def send_id(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'🆔 Get your Chat-ID: https://t.me/btsherald_bot')
+                f'🆔 '+afkapp_bcbot_08+' https://t.me/btsherald_bot')
 
         def send_map(update: Update, context: CallbackContext) -> None:
-            update.message.reply_text('🔃 Proccessing...')
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
             if sendMapReport() is None:
-                update.message.reply_text('😿 An error has occurred')
+                update.message.reply_text('😿 '+afkapp_bcbot_09)
 
         def send_bcoin(update: Update, context: CallbackContext) -> None:
-            update.message.reply_text('🔃 Proccessing...')
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
             if sendBCoinReport() is None:
-                update.message.reply_text('😿 An error has occurred')
+                update.message.reply_text('😿 '+afkapp_bcbot_09)
 
         def send_wallet(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'🎁 BUSD/BCOIN(BEP20): \n\n 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a \n\n Thank You! 😀')
+                f'🎁 BUSD/BCOIN(BEP20): \n\n 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a \n\n '+afkapp_bcbot_10+' 😀')
 
         def send_telegram_invite(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'💖 Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0')
+                f'💖 '+afkapp_bcbot_11+' https://t.me/+WXjrE1Kdb1U1Mzg0')
 
         def send_herald(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'🇺🇸 The BTS Herald is a monitoring service, which will notify you if the BOT/farm stops working. Get started today for FREE: \n\n 🇧🇷 O BTS Herald é um serviço de monitoramento, que irá te notificar se o BOT/farm pararem de funcionar. Comece hoje GRATUITAMENTE: \n\n https://herald.btscenter.net')
+                f''+afkapp_bcbot_12)
 
         def send_vps(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'🇺🇸 BTS IT Solutions is a hosting provider operating on the internet since 2008. With a VPS service, your BOT works 24/7 in our structure, without depending of your computer/laptop, you can access from anywhere by remote connection, this it avoids having to buy hardware exclusively for the BOT and the risks of having losses with outages of power and internet that occur in domestic use. We deliver optimized and with the BCBOT installed. Make your farm professional:  \n\n 🇧🇷 A BTS IT Solutions é um provedor de hospedagem que atua na internet desde 2008. Com um serviço de VPS, o seu BOT funciona 24/7 em nossa estrutura, sem depender do seu computador, você pode acessar de qualquer lugar por conexão remota, ainda evita de ter que comprar equipamento exclusivamente para o BOT e os riscos de ter prejuízo com queda de energia e internet que ocorrem no uso doméstico. Entregamos optimizado e com o BCBOT instalado. Torne o seu farm profissional: \n\n https://vps.btscenter.net')
+                f''+afkapp_bcbot_13)
 
         def send_stop(update: Update, context: CallbackContext) -> None:
-            logger('Shutting down bot...', telegram=True, emoji='🛑')
+            logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
             os._exit(0)
 
         def send_refresh(update: Update, context: CallbackContext) -> None:
@@ -351,7 +427,7 @@ def sendBCoinReport():
             except:
                 logger('Telegram offline', emoji='😿')
     clickButton(x_button_img)
-    logger('BCoin report sent', telegram=True, emoji='📄')
+    logger(afkapp_bcbot_20, telegram=True, emoji='📄')
     return True
 
 
@@ -399,15 +475,15 @@ def sendMapReport():
                 TBot.send_photo(chat_id=chat_id, photo=open(
                     './logs/map-report.%s' % telegramFormatImage, 'rb'))
         except:
-            logger('Telegram offline', emoji='😿')
+            logger(afkapp_bcbot_19, emoji='😿')
 
         try:
             sendPossibleAmountReport(sct_img[:, :, :3])
         except:
-            logger('Error finding chests', telegram=True, emoji='😿')
+            logger(afkapp_bcbot_21, telegram=True, emoji='😿')
 
     clickButton(x_button_img)
-    logger('Map report sent', telegram=True, emoji='📄')
+    logger(afkapp_bcbot_22, telegram=True, emoji='📄')
     return True
 
 #BTS Herald - Get a notification if the bot stops 
@@ -538,7 +614,7 @@ def clickButtons():
         heroes_clicked_total = heroes_clicked_total + 1
         # cv2.rectangle(sct_img, (x, y) , (x + w, y + h), (0,255,255),2)
         if heroes_clicked > 15:
-            logger('Too many hero clicks, try to increase the go_to_work_btn threshold',
+            logger(afkapp_bcbot_23,
                    telegram=True, emoji='⚠️')
             return
         sleep(1, 3)
@@ -591,7 +667,7 @@ def clickGreenBarButtons():
         global heroes_clicked
         heroes_clicked_total = heroes_clicked_total + 1
         if heroes_clicked > 15:
-            logger('Too many hero clicks, try to increase the go_to_work_btn threshold',
+            logger(afkapp_bcbot_23,
                    telegram=True, emoji='⚠️')
             return
         # cv2.rectangle(sct_img, (x, y) , (x + w, y + h), (0,255,255),2)
@@ -631,7 +707,7 @@ def clickFullBarButtons():
         global heroes_clicked
         heroes_clicked_total = heroes_clicked_total + 1
         if heroes_clicked > 15:
-            logger('Too many hero clicks, try to increase the go_to_work_btn threshold',
+            logger(afkapp_bcbot_23,
                    telegram=True, emoji='⚠️')
             return
         sleep(1, 3)
@@ -683,7 +759,7 @@ def goToTreasureHunt():
 
 
 def refreshHeroesPositions():
-    logger('Refreshing heroes positions', emoji='🔃')
+    logger(afkapp_bcbot_31, emoji='🔃')
     global next_refresh_heroes_positions
     next_refresh_heroes_positions = random.uniform(
         configTimeIntervals['refresh_heroes_positions'][0], configTimeIntervals['refresh_heroes_positions'][1])
@@ -705,7 +781,7 @@ def login():
     randomMouseMovement()
 
     if clickButton(connect_wallet_btn_img):
-        logger('Connect wallet button detected, logging in!', emoji='🎉')
+        logger(afkapp_bcbot_32, emoji='🎉')
         time.sleep(2)
         waitForImage((sign_btn_img, metamask_unlock_img), multiple=True)
 
@@ -733,22 +809,22 @@ def login():
         handleError()
 
     if currentScreen() == "main":
-        logger('Logged in', telegram=True, emoji='🎉')
+        logger(afkapp_bcbot_38, telegram=True, emoji='🎉')
         time.sleep(5)
         return True
     else:
-        logger('Login failed, trying again', emoji='😿')
+        logger(afkapp_bcbot_39, emoji='😿')
         login_attempts += 1
 
         if (login_attempts > 3):
             sendTelegramPrint()
-            logger('+3 login attempts, retrying', telegram=True, emoji='🔃')
+            logger(afkapp_bcbot_40, telegram=True, emoji='🔃')
             # pyautogui.hotkey('ctrl', 'f5')
             pyautogui.hotkey('ctrl', 'shift', 'r')
             login_attempts = 0
 
             if clickButton(metamask_cancel_button):
-                logger('Metamask is glitched, fixing', emoji='🙀')
+                logger(afkapp_bcbot_41, emoji='🙀')
 
             waitForImage(connect_wallet_btn_img)
 
@@ -760,9 +836,9 @@ def login():
 def handleError():
     if positions(error_img, configThreshold['error']) is not False:
         sendTelegramPrint()
-        logger('Error detected, trying to resolve', telegram=True, emoji='💥')
+        logger(afkapp_bcbot_42, telegram=True, emoji='💥')
         clickButton(ok_btn_img)
-        logger('Refreshing page', telegram=True, emoji='🔃')
+        logger(afkapp_bcbot_43, telegram=True, emoji='🔃')
         # pyautogui.hotkey('ctrl', 'f5')
         pyautogui.hotkey('ctrl', 'shift', 'r')
         waitForImage(connect_wallet_btn_img)
@@ -810,8 +886,8 @@ def getMoreHeroes():
             empty_scrolls_attempts = empty_scrolls_attempts - 1
             scroll()
         sleep(1, 3)
-    logger('{} total heroes sent since the bot started'.format(
-        heroes_clicked_total), telegram=True, emoji='🦸')
+    logger('{} '.format(
+        heroes_clicked_total)+afkapp_bcbot_48, telegram=True, emoji='🦸')
     goToTreasureHunt()
 
 def checkLogout():
@@ -859,7 +935,7 @@ def waitForImage(imgs, timeout=30, threshold=0.5, multiple=False):
 
 
 def clickNewMap():
-    logger('New map', emoji='🗺️')
+    logger(afkapp_bcbot_51, emoji='🗺️')
     sleep(1, 2)
     sleep(2, 3)
     sendMapReport()
@@ -891,7 +967,7 @@ def checkUpdates():
         logger('Version not found in github, securety problem', emoji='💥')
         version = "0"
 
-    print('Git Version: ' + version)
+    print(afkapp_bcbot_53+' ' + version)
 
     try:
         streamVersionLocal = open("./config/version.yaml", 'r')
@@ -905,12 +981,12 @@ def checkUpdates():
         os._exit(0)
 
     if versionLocal is not None:
-        print('Version installed: ' + versionLocal)
+        print(afkapp_bcbot_54+' ' + versionLocal)
         if version > versionLocal:
-            logger('New version ' + version +
-                   ' available, please update', telegram=True, emoji='🎉'),
+            logger(afkapp_bcbot_55+' ' + version +
+                   ' '+afkapp_bcbot_56, telegram=True, emoji='🎉'),
     else:
-        logger('Version not found, update is required',
+        logger(afkapp_bcbot_57,
                telegram=True, emoji='💥')
         exit()
 
@@ -924,7 +1000,7 @@ def checkThreshold():
         logger('New Threshold applied', telegram=False, emoji='⚙️')
 
 def bcbotsingle():
-    print('Multi account feature is DISABLE on config.yaml.')
+    print(afkapp_bcbot_59)
     last = {
         "login": 0,
         "heroes": 0,
@@ -974,7 +1050,7 @@ def bcbotsingle():
         checkThreshold()
 
 def bcbotmaw():
-    print('Multi account feature is enable on config.yaml.')
+    print(afkapp_bcbot_61)
 
     try:
     
@@ -1032,7 +1108,7 @@ def bcbotmaw():
 
 
     except PyGetWindowException:
-        logger('--> Error: Multi Account (PyGetWindow): Trying to resolve, check your farm.', telegram=False, emoji='💥')
+        logger(afkapp_bcbot_62, telegram=False, emoji='💥')
         bcbotmaw() #Try again
 
 def main():
@@ -1040,8 +1116,8 @@ def main():
     checkUpdates()
     #input('Press Enter to start the bot...\n')
     #logger('Starting bot...', telegram=True, emoji='🤖')
-    logger('Join us on BCBOT Telegram group: https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
-    logger('Commands: \n\n /print \n /map \n /bcoin \n /refresh \n /invite \n /id \n /donation \n\n /stop - Stop bot \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service', telegram=True, emoji='ℹ️')
+    logger(afkapp_bcbot_11+' https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
+    logger(afkapp_bcbot_63, telegram=True, emoji='ℹ️')
 
     if multi_account != True and os.name == 'nt':
         bcbotsingle() 
@@ -1056,7 +1132,7 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        logger('Shutting down the bot', telegram=True, emoji='😓')
+        logger(afkapp_bcbot_14, telegram=True, emoji='😓')
         if(updater):
             updater.stop()
         exit()
