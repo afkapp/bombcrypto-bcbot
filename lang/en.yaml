@@ -1,4 +1,4 @@
-  # Set lang = en inside of config.yaml to define the english language
+  # Set lang: 'en' inside of config.yaml to define the english language
   afkapp_bcbot_01: "The multi account will be Linux compatible after the project receives $500 in donations."
   afkapp_bcbot_02: "BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a"
   afkapp_bcbot_03: "https://github.com/afkapp/bombcrypto-bcbot"
@@ -10,7 +10,7 @@
   afkapp_bcbot_09: "An error has occurred"
   afkapp_bcbot_10: "Thank You!"
   afkapp_bcbot_11: "Join us on BCBOT Telegram group:"
-  afkapp_bcbot_12: "The BTS Herald is a monitoring service, which will notify you if the BOT/farm stops working. Get started today for FREE:"
+  afkapp_bcbot_12: "The BTS Herald is a monitoring service, which will notify you if the BOT/farm stops working. Get started today for FREE: \n\n https://www.btscenter.net/bts-herald"
   afkapp_bcbot_13: "BTS IT Solutions is a hosting provider operating on the internet since 2008. With a VPS service, your BOT works 24/7 in our structure, without depending of your computer/laptop, you can access from anywhere by remote connection, this it avoids having to buy hardware exclusively for the BOT and the risks of having losses with outages of power and internet that occur in domestic use. We deliver optimized and with the BCBOT installed. Make your farm professional:"
   afkapp_bcbot_14: "Shutting down bot..."
   afkapp_bcbot_15: "Bot not initialized, see configuration file"
