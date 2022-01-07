@@ -1,4 +1,4 @@
-  # Defina lang = pt_br dentro do arquivo config.yaml para usar o bot em português do Brasil
+  # Defina lang: 'pt_br' dentro do arquivo config.yaml para usar o bot em português do Brasil
   afkapp_bcbot_01: "O multi account será compatível com Linux após o projeto receber $500 em doações."
   afkapp_bcbot_02: "BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a"
   afkapp_bcbot_03: "https://github.com/afkapp/bombcrypto-bcbot"
