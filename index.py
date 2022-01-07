@@ -489,7 +489,7 @@ def sendMapReport():
 #BTS Herald - Get a notification if the bot stops 
 def herald():
     if herald_active == True and key_herald != '':
-        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&label='+herald_label+'&key='+key_herald)
+        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&lang='+afkapplang+'&label='+herald_label+'&key='+key_herald)
         
 def clickButton(img, name=None, timeout=3, threshold=configThreshold['default']):
     if not name is None:
