@@ -15,7 +15,7 @@
   afkapp_bcbot_14: "Desligando o bot..."
   afkapp_bcbot_15: "Bot not initialized, see configuration file"
   afkapp_bcbot_16: "Error to send telegram message. See configuration file"
-  afkapp_bcbot_17: "Possible quantity chest per type"
+  afkapp_bcbot_17: "Quantidade possível por tipo de baú:"
   afkapp_bcbot_18: "Quantidade possível:"
   afkapp_bcbot_19: "Telegram offline"
   afkapp_bcbot_20: "Relatório de BCoins enviado"
