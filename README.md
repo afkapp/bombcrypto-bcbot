@@ -22,7 +22,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 7) Open the command prompt (CMD) as administrator.
 8) Go to your BCBOT directory, in our suggestion: cd C:\BCBOT
 9) RUN: pip install -r requirements.txt --force
-10) DONE. RUN BCBOT: ### cd C:\BCBOT && python index.py ###
+10) DONE. RUN BCBOT: <b> cd C:\BCBOT && python index.py </b>
 
 ### MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
