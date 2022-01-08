@@ -18,8 +18,8 @@
 #******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
 #********************************************************************************#
 
-  lang: 'en'              #----> Bot language (in development)
-  multi-account: false    #----> true for enable multi account feature
+  lang: 'en'              #----> Bot language (pt_br para português)
+  multi-account: false    #----> true for enable **BETA** multi account feature
   
 #************************************(OPTIONAL)**********************************#
 #   ██████╗░████████╗░██████╗  ██╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░██████╗░  #
@@ -150,11 +150,11 @@
     super_legendary: 0.8
 
     # [en_US]
-    # Default value: 0.8
+    # Default value: 0.7
     #
     # [pt_BR]
-    # Valor padrão: 0.8
-    error: 0.8
+    # Valor padrão: 0.7
+    error: 0.7
 
     # [en_US]
     # Default value: 0.8
@@ -297,4 +297,4 @@
 
   # [en] PLEASE DON'T CHANGE
   # [pt_br] POR FAVOR NÃO ALTERE
-  version: "1.1.2"
+  version: "1.1.3"
