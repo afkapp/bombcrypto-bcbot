@@ -85,7 +85,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.2' #Required config version
+config_version = '1.1.3' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -329,7 +329,7 @@ if telegramIntegration == True:
         updater.start_polling()
         # updater.idle()
     except:
-        logger('Bot not initialized, see configuration file', emoji='🤖')
+        logger(afkapp_bcbot_15, emoji='🤖')
 
 
 def sendTelegramMessage(message):
@@ -355,7 +355,7 @@ def sendTelegramPrint():
                 TBot.send_photo(chat_id=chat_id, photo=open(
                     './logs/print-report.%s' % telegramFormatImage, 'rb'))
     except:
-        logger('Error to send telegram message. See configuration file', emoji='📄')
+        logger(afkapp_bcbot_16, emoji='📄')
 
 
 def sendPossibleAmountReport(baseImage):
@@ -374,13 +374,13 @@ def sendPossibleAmountReport(baseImage):
     total = value1 + value2 + value3 + value4
 
     report = """
-Possible quantity chest per type:
+"""+afkapp_bcbot_17+"""
 🟤 - """+str(c1)+"""
 🟣 - """+str(c2)+"""
 🟡 - """+str(c3)+"""
 🔵 - """+str(c4)+"""
 
-🤑 Possible amount: """+f'{total:.3f} BCoin'+"""
+🤑 """+afkapp_bcbot_18+""" """+f'{total:.3f} BCoin'+"""
 """
     logger(report, telegram=True)
 
@@ -425,7 +425,7 @@ def sendBCoinReport():
                     TBot.send_photo(chat_id=chat_id, photo=open(
                         './logs/bcoin-report.%s' % telegramFormatImage, 'rb'))
             except:
-                logger('Telegram offline', emoji='😿')
+                logger(afkapp_bcbot_19, emoji='😿')
     clickButton(x_button_img)
     logger(afkapp_bcbot_20, telegram=True, emoji='📄')
     return True
