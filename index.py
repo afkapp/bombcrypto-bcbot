@@ -60,6 +60,8 @@ banner = """
 
 print(banner)
 
+P=[]
+
 def readConfig():
     with open("./config/config.yaml", 'r', encoding='utf8') as s:
         stream = s.read()
@@ -152,6 +154,10 @@ chest1 = cv2.imread('./images/targets/chest1.png')
 chest2 = cv2.imread('./images/targets/chest2.png')
 chest3 = cv2.imread('./images/targets/chest3.png')
 chest4 = cv2.imread('./images/targets/chest4.png')
+allwork = cv2.imread('./images/targets/all_work.png')
+allrest = cv2.imread('./images/targets/all_rest.png')
+common = cv2.imread('./images/targets/common.png')
+rest = cv2.imread('./images/targets/go_rest.png')
 
 def readAfkAppLang():
     with open("./lang/"+afkapplang+".yaml", 'r', encoding='utf8') as l:
@@ -223,6 +229,15 @@ try:
     afkapp_bcbot_61 = streamLang['afkapp_bcbot_61']
     afkapp_bcbot_62 = streamLang['afkapp_bcbot_62']
     afkapp_bcbot_63 = streamLang['afkapp_bcbot_63']
+    afkapp_bcbot_64 = streamLang['afkapp_bcbot_64']
+    afkapp_bcbot_65 = streamLang['afkapp_bcbot_65']
+    afkapp_bcbot_66 = streamLang['afkapp_bcbot_66']
+    afkapp_bcbot_67 = streamLang['afkapp_bcbot_67']
+    afkapp_bcbot_68 = streamLang['afkapp_bcbot_68']
+    afkapp_bcbot_69 = streamLang['afkapp_bcbot_69']
+    afkapp_bcbot_70 = streamLang['afkapp_bcbot_70']
+
+    
 except FileNotFoundError:
     print('Error: The language file was not found.')
     print('Erro: O arquivo do idioma não foi encontrado.')
@@ -300,14 +315,32 @@ if telegramIntegration == True:
             update.message.reply_text(
                 f''+afkapp_bcbot_13)
 
-        def send_stop(update: Update, context: CallbackContext) -> None:
-            logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
-            os._exit(0)
-
         def send_refresh(update: Update, context: CallbackContext) -> None:
             pyautogui.hotkey('ctrl', 'shift', 'r')
             waitForImage(connect_wallet_btn_img)
             login()
+
+        def send_allwork(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
+            if sendallworkReport() == None:
+                update.message.reply_text('✔️ '+afkapp_bcbot_64)
+        
+        def send_allrest(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
+            if sendallrestReport() == None:
+                update.message.reply_text('✔️ '+afkapp_bcbot_64)
+        
+        def send_pause(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text(
+                f'💡 '+afkapp_bcbot_65)
+
+        def send_continue(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text(
+                f'💡 '+afkapp_bcbot_65)
+
+        def send_stop(update: Update, context: CallbackContext) -> None:
+            logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
+            os._exit(0)
                
         commands = [
             ['print', send_print],
@@ -319,6 +352,10 @@ if telegramIntegration == True:
             ['invite', send_telegram_invite],
             ['herald', send_herald],
             ['vps', send_vps],
+            ['allwork', send_allwork],
+            ['allrest', send_allrest],
+            ['pause', send_pause],
+            ['continue', send_continue],
             ['stop', send_stop]
         ]
 
@@ -485,6 +522,56 @@ def sendMapReport():
     clickButton(x_button_img)
     logger(afkapp_bcbot_22, telegram=True, emoji='📄')
     return True
+
+def sendallworkReport():
+    if telegramIntegration == False:
+        return
+    if(len(telegramChatId) <= 0):
+        return
+    if currentScreen() == "main":
+            time.sleep(2)
+    elif currentScreen() == "character":
+        if clickButton(x_button_img):
+            time.sleep(2)
+    elif currentScreen() == "thunt":
+        if clickButton(arrow_img):
+            time.sleep(2)
+    else:
+        return
+    
+    clickButton(hero_img)    
+    waitForImage(home_img)
+    clickButton(allwork)
+    clickButton(x_button_img)
+    clickButton(teasureHunt_icon_img)
+    sleep(5, 15)
+    clickButton(x_button_img)
+    logger('All working report sent', telegram=True, emoji='📄')
+
+def sendallrestReport():
+    if telegramIntegration == False:
+        return
+    if(len(telegramChatId) <= 0):
+        return
+    if currentScreen() == "main":
+            time.sleep(2)
+    elif currentScreen() == "character":
+        if clickButton(x_button_img):
+            time.sleep(2)
+    elif currentScreen() == "thunt":
+        if clickButton(arrow_img):
+            time.sleep(2)
+    else:
+        return
+    
+    clickButton(hero_img)    
+    waitForImage(home_img)
+    clickButton(allrest)
+    clickButton(x_button_img)
+    clickButton(teasureHunt_icon_img)
+    sleep(5, 15)    
+    clickButton(x_button_img)
+    logger('All resting report sent', telegram=True, emoji='📄')
 
 #BTS Herald - Get a notification if the bot stops 
 def herald():
