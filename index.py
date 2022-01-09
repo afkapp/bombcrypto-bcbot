@@ -336,13 +336,22 @@ if telegramIntegration == True:
         
         def send_pause(update: Update, context: CallbackContext) -> None:
             update.message.reply_text('🔃 '+afkapp_bcbot_07)
-            Pause.append(1)
             if len(Pause) == 1:
+                update.message.reply_text('⚠️ '+afkapp_bcbot_69)
+            if len(Pause) == 0:
+                Pause.append(1)
                 update.message.reply_text('✔️ '+afkapp_bcbot_68)
 
         def send_continue(update: Update, context: CallbackContext) -> None:
-            update.message.reply_text(
-                f'💡 '+afkapp_bcbot_65)
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
+            if len(Pause) == 0:
+                update.message.reply_text('⚠️ '+afkapp_bcbot_70)
+            if len(Pause) == 1:
+                #time.sleep(0.25)
+                #Pause.remove(1)
+                #
+                update.message.reply_text('💡 '+afkapp_bcbot_65)
+                #update.message.reply_text('✔️ '+afkapp_bcbot_67)
 
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
@@ -1114,8 +1123,11 @@ def bcbotsingle():
         if len(ps) == 1:
             logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
             time.sleep(PT*60)
-            Pause.remove(1)
-            logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+            if len(ps) == 1:
+                Pause.remove(1)
+                logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+            if len(ps) == 0:
+                    logger('Debug of continue', telegram=True, emoji='🤖') #Test
 
         if now - last["heroes"] > next_refresh_heroes * 60:
             last["heroes"] = now
@@ -1177,8 +1189,11 @@ def bcbotmaw():
             if len(ps) == 1:
                 logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
                 time.sleep(PT*60)
-                Pause.remove(1)
-                logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+                if len(ps) == 1:
+                    Pause.remove(1)
+                    logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+                if len(ps) == 0:
+                    logger('Debug of continue', telegram=True, emoji='🤖') #Test
         
             for last in windows:
                 last["window"].activate()
