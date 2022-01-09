@@ -1115,6 +1115,7 @@ def bcbotsingle():
             logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
             time.sleep(PT*60)
             Pause.remove(1)
+            logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
 
         if now - last["heroes"] > next_refresh_heroes * 60:
             last["heroes"] = now
@@ -1177,6 +1178,7 @@ def bcbotmaw():
                 logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
                 time.sleep(PT*60)
                 Pause.remove(1)
+                logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
         
             for last in windows:
                 last["window"].activate()
