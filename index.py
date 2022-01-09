@@ -427,6 +427,7 @@ def sendPossibleAmountReport(baseImage):
 
     report = """
 """+afkapp_bcbot_17+"""
+
 🟤 - """+str(c1)+"""
 🟣 - """+str(c2)+"""
 🟡 - """+str(c3)+"""
@@ -1123,11 +1124,11 @@ def bcbotsingle():
         if len(ps) == 1:
             logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
             time.sleep(PT*60)
+            if len(ps) == 0:
+                logger('Debug of continue', telegram=True, emoji='🤖') #Test
             if len(ps) == 1:
                 Pause.remove(1)
                 logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
-            if len(ps) == 0:
-                    logger('Debug of continue', telegram=True, emoji='🤖') #Test
 
         if now - last["heroes"] > next_refresh_heroes * 60:
             last["heroes"] = now
@@ -1164,12 +1165,10 @@ def bcbotsingle():
 def bcbotmaw():
     print(afkapp_bcbot_61)
 
-    try:
+    windows = []
     
-        windows = []
-    
-        for w in bcbotma.getWindowsWithTitle('bombcrypto'):
-            windows.append({
+    for w in bcbotma.getWindowsWithTitle('bombcrypto'):
+        windows.append({
             "window": w,
             "login" : 0,
             "heroes" : 0,
@@ -1177,27 +1176,27 @@ def bcbotmaw():
             "refresh_heroes" : 0
             })
 
-        while True:
-            if currentScreen() == "login":
-                login()
+    while True:
+        if currentScreen() == "login":
+            login()
 
-            handleError()
+        handleError()
 
-            now = time.time()
-
-            ps=PauseStatus()
-            if len(ps) == 1:
-                logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
-                time.sleep(PT*60)
-                if len(ps) == 1:
-                    Pause.remove(1)
-                    logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
-                if len(ps) == 0:
-                    logger('Debug of continue', telegram=True, emoji='🤖') #Test
+        now = time.time()
         
-            for last in windows:
-                last["window"].activate()
-                time.sleep(2)
+        ps=PauseStatus()
+        if len(ps) == 1:
+            logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
+            time.sleep(PT*60)
+            if len(ps) == 0:
+                logger('Debug of continue', telegram=True, emoji='🤖') #Test
+            if len(ps) == 1:
+                Pause.remove(1)
+                logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+
+        for last in windows:
+            last["window"].activate()
+            time.sleep(2)
         
             if now - last["heroes"] > next_refresh_heroes * 60:
                 last["heroes"] = now
@@ -1222,16 +1221,10 @@ def bcbotmaw():
                 last["refresh_heroes"] = now
                 refreshHeroesPositions()
 
-            sys.stdout.flush()
-            time.sleep(1)
-
             checkLogout()
+            sys.stdout.flush()
+            time.sleep(general_check_time)
             checkThreshold()
-
-
-    except PyGetWindowException:
-        logger(afkapp_bcbot_62, telegram=False, emoji='💥')
-        bcbotmaw() #Try again
 
 def main():
 
