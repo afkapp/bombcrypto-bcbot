@@ -60,7 +60,7 @@ banner = """
 
 print(banner)
 
-P=[]
+Pause=[]
 
 def readConfig():
     with open("./config/config.yaml", 'r', encoding='utf8') as s:
@@ -87,7 +87,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.3' #Required config version
+config_version = '1.1.4' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -98,6 +98,8 @@ herald_active= streamConfig['herald_active']
 key_herald = streamConfig['key-herald']
 herald_label = streamConfig['label']
 multi_account = streamConfig['multi-account']
+PT = configTimeIntervals['Pause_Time']
+PWAR = configTimeIntervals['Pause_With_All_Rest']
 
 telegramIntegration = False
 try:
@@ -267,6 +269,8 @@ def logger(message, telegram=False, emoji=None):
         logger_file.close()
     return True
 
+def PauseStatus():
+    return Pause
 
 # Initialize telegram
 updater = None
@@ -331,8 +335,10 @@ if telegramIntegration == True:
                 update.message.reply_text('✔️ '+afkapp_bcbot_64)
         
         def send_pause(update: Update, context: CallbackContext) -> None:
-            update.message.reply_text(
-                f'💡 '+afkapp_bcbot_65)
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
+            Pause.append(1)
+            if len(Pause) == 1:
+                update.message.reply_text('✔️ '+afkapp_bcbot_68)
 
         def send_continue(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
@@ -1104,6 +1110,12 @@ def bcbotsingle():
 
         now = time.time()
 
+        ps=PauseStatus()
+        if len(ps) == 1:
+            logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
+            time.sleep(PT*60)
+            Pause.remove(1)
+
         if now - last["heroes"] > next_refresh_heroes * 60:
             last["heroes"] = now
             last["refresh_heroes"] = now
@@ -1159,6 +1171,12 @@ def bcbotmaw():
             handleError()
 
             now = time.time()
+
+            ps=PauseStatus()
+            if len(ps) == 1:
+                logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
+                time.sleep(PT*60)
+                Pause.remove(1)
         
             for last in windows:
                 last["window"].activate()
