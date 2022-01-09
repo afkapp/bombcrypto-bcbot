@@ -64,9 +64,9 @@
   afkapp_bcbot_63: "Commands: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Pause the bot for 1h \n /continue - Unpause the bot \n /stop - Stop the bot \n /invite - Join us on Telegram \n /donation - Donate to help the project \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service"
   afkapp_bcbot_64: "Successfully concluded."
   afkapp_bcbot_65: "Coming Soon..."
-  afkapp_bcbot_66: "BCBOT has been paused"
-  afkapp_bcbot_67: "BCBOT has been unpaused"
-  afkapp_bcbot_68:
+  afkapp_bcbot_66: "BCBOT has been paused."
+  afkapp_bcbot_67: "BCBOT has been unpaused."
+  afkapp_bcbot_68: "BCBOT will be paused soon."
   afkapp_bcbot_69:
   afkapp_bcbot_70:
 
