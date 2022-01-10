@@ -25,7 +25,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 10) DONE. RUN BCBOT: 
 
 ```
-<b> cd C:\BCBOT && python index.py </b>
+cd C:\BCBOT && python index.py
 ```
 
 ![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
@@ -36,7 +36,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 2) DONE. RUN BCBOT:
 
 ```
-<b> cd C:\BCBOT && python index.py </b>
+cd C:\BCBOT && python index.py
 ```
 
 ![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
