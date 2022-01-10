@@ -61,7 +61,7 @@
   afkapp_bcbot_60: "Entering treasure hunt"
   afkapp_bcbot_61: "Recurso de multi conta **BETA/EXPERIMENTAL** HABILITADO no config.yaml."
   afkapp_bcbot_62: "Erro: (PyGetWindow): o multi account é beta e podem ocorrer erros, para uma conta o bot está estavél."
-  afkapp_bcbot_63: "Comandos: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Pausar o bot \n /continue - Despausar o bot \n\n /closerdp - Fechar RDP *Premium \n\n /stop - Parar o bot \n\n /invite - Junte-se a nós no Telegram \n /donation - Doe para ajudar o projeto \n\n /vps - Contratar um VPS \n /herald - Serviço de Monitoramento"
+  afkapp_bcbot_63: "Comandos: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Pausar o bot \n /continue - Despausar o bot \n\n /closevps - Fechar o VPS *Premium \n\n /stop - Parar o bot \n\n /invite - Junte-se a nós no Telegram \n /donation - Doe para ajudar o projeto \n\n /vps - Contratar um VPS \n /herald - Serviço de Monitoramento"
   afkapp_bcbot_64: "Concluído com sucesso."
   afkapp_bcbot_65: "Em breve..."
   afkapp_bcbot_66: "O BCBOT foi pausado."
@@ -69,7 +69,7 @@
   afkapp_bcbot_68: "O BCBOT será pausado em breve."
   afkapp_bcbot_69: "O BCBOT já está pausado."
   afkapp_bcbot_70: "O BCBOT não está pausado."
-  afkapp_bcbot_71: "A conexão com o Windows Server será encerrada em 30 segundos..."
+  afkapp_bcbot_71: "A janela do VPS será fechada em 30 segundos..."
   afkapp_bcbot_72: "Recurso não compatível com o seu sistema."
 
 
