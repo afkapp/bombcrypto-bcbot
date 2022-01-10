@@ -24,14 +24,22 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 9) RUN: pip install -r requirements.txt --force
 10) DONE. RUN BCBOT: 
 
+```
 <b> cd C:\BCBOT && python index.py </b>
+```
+
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
 
 ### MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
 1) Enable this feature on config.yaml (multi-account: true).
 2) DONE. RUN BCBOT:
 
+```
 <b> cd C:\BCBOT && python index.py </b>
+```
+
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
 
 **NOTES**
 - We get better results with Firefox.
