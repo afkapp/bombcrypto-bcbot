@@ -274,6 +274,15 @@ def logger(message, telegram=False, emoji=None):
 def PauseStatus():
     return Pause
 
+def checkFileExist(filePath):
+    try:
+        with open(filePath, 'r') as f:
+            return True
+    except FileNotFoundError as e:
+        return False
+    except IOError as e:
+        return False
+
 # Initialize telegram
 updater = None
 if telegramIntegration == True:
@@ -359,12 +368,13 @@ if telegramIntegration == True:
             update.message.reply_text('🔃 '+afkapp_bcbot_07)
             if os.name != 'nt':
                 update.message.reply_text('⚠️ '+afkapp_bcbot_72)
-            elif os.name == 'nt':
-                #update.message.reply_text('✔️ '+afkapp_bcbot_71)
-                #fileName = r"closerdp"
-                #os.path.isfile(fileName)
-                #
-                update.message.reply_text('💡 '+afkapp_bcbot_65)
+            if os.name == 'nt':
+                FE = checkFileExist('BtsCloseRDP.exe')
+                if FE != True:
+                    update.message.reply_text('💡 '+afkapp_bcbot_65)
+                if FE == True:
+                    update.message.reply_text('✔️ '+afkapp_bcbot_71)
+                    os.startfile("BtsCloseRDP.exe")
 
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
