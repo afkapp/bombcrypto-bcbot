@@ -968,16 +968,16 @@ def getMoreHeroes():
     global next_refresh_heroes
     global heroes_clicked
 
-    logger('Search for heroes to work', emoji='🏢')
+    logger(afkapp_bcbot_44, emoji='🏢')
 
     goToHeroes()
 
     if streamConfig['select_heroes_mode'] == "full":
-        logger('Sending heroes with full stamina bar to work!', emoji='⚒️')
+        logger(afkapp_bcbot_45, emoji='⚒️')
     elif streamConfig['select_heroes_mode'] == "green":
-        logger('Sending heroes with green stamina bar to work!', emoji='⚒️')
+        logger(afkapp_bcbot_46, emoji='⚒️')
     else:
-        logger('Sending all heroes to work!', emoji='⚒️')
+        logger(afkapp_bcbot_47, emoji='⚒️')
 
     buttonsClicked = 0
     heroes_clicked = 0
