@@ -69,6 +69,8 @@
   afkapp_bcbot_68: "BCBOT will be paused soon."
   afkapp_bcbot_69: "BCBOT is already paused."
   afkapp_bcbot_70: "BCBOT is not paused."
+  afkapp_bcbot_71: "Sending order to close the RDP..."
+  afkapp_bcbot_72: "It's not compatible with your system."
 
 
 
