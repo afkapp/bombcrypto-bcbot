@@ -369,12 +369,12 @@ if telegramIntegration == True:
             if os.name != 'nt':
                 update.message.reply_text('⚠️ '+afkapp_bcbot_72)
             if os.name == 'nt':
-                FE = checkFileExist('BtsCloseRDP.exe')
+                FE = checkFileExist('BtsCloseVPS.exe')
                 if FE != True:
                     update.message.reply_text('💡 '+afkapp_bcbot_65)
                 if FE == True:
                     update.message.reply_text('✔️ '+afkapp_bcbot_71)
-                    os.startfile("BtsCloseRDP.exe")
+                    os.startfile("BtsCloseVPS.exe")
 
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
