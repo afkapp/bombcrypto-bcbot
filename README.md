@@ -28,7 +28,7 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 cd C:\BCBOT && python index.py
 ```
 
-![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwindows.png)
 
 ### MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
@@ -39,7 +39,7 @@ cd C:\BCBOT && python index.py
 cd C:\BCBOT && python index.py
 ```
 
-![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwin.png)
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwindows.png)
 
 **NOTES**
 - We get better results with Firefox.
