@@ -61,7 +61,7 @@
   afkapp_bcbot_60: "Entrée dans la chasse au trésor"
   afkapp_bcbot_61: "La fonction multi-comptes est ACTIVÉE dans config.yaml."
   afkapp_bcbot_62: "Erreur : Compte multiple (PyGetWindow) : Essayez de résoudre, vérifiez votre farm."
-  afkapp_bcbot_63: "Commandes: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Mettre le BOT en pause \n /continue - Remet le BOT en route \n /stop - Ferme le bot \n /invite - Rejoignez-nous sur Telegram \n /donation - Faites une donation pour aider le projet \n\n /vps - Obtenez VPS avec BCBOT installé \n /herald - Service de surveillance"
+  afkapp_bcbot_63: "Commandes: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Mettre le BOT en pause \n /continue - Remet le BOT en route \n\n /closerdp - Fermer RDP *Premium \n\n /stop - Ferme le bot \n\n /invite - Rejoignez-nous sur Telegram \n /donation - Faites une donation pour aider le projet \n\n /vps - Obtenez VPS avec BCBOT installé \n /herald - Service de surveillance"
   afkapp_bcbot_64: "Conclu avec succès."
   afkapp_bcbot_65: "À venir..."
   afkapp_bcbot_66: "BCBOT a été mis en pause"
