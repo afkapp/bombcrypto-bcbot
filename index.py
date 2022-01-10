@@ -395,7 +395,7 @@ if telegramIntegration == True:
             ['allrest', send_allrest],
             ['pause', send_pause],
             ['continue', send_continue],
-            ['closerdp', send_closevps],
+            ['closevps', send_closevps],
             ['stop', send_stop]
         ]
 
