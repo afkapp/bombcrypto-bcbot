@@ -240,6 +240,7 @@ try:
     afkapp_bcbot_70 = streamLang['afkapp_bcbot_70']
     afkapp_bcbot_71 = streamLang['afkapp_bcbot_71']
     afkapp_bcbot_72 = streamLang['afkapp_bcbot_72']
+    afkapp_bcbot_73 = streamLang['afkapp_bcbot_73']
 
     
 except FileNotFoundError:
@@ -364,14 +365,14 @@ if telegramIntegration == True:
                 update.message.reply_text('💡 '+afkapp_bcbot_65)
                 #update.message.reply_text('✔️ '+afkapp_bcbot_67)
 
-        def send_closerdp(update: Update, context: CallbackContext) -> None:
+        def send_closevps(update: Update, context: CallbackContext) -> None:
             update.message.reply_text('🔃 '+afkapp_bcbot_07)
             if os.name != 'nt':
                 update.message.reply_text('⚠️ '+afkapp_bcbot_72)
             if os.name == 'nt':
                 FE = checkFileExist('BtsCloseVPS.exe')
                 if FE != True:
-                    update.message.reply_text('💡 '+afkapp_bcbot_65)
+                    update.message.reply_text('🖥️ '+afkapp_bcbot_73)
                 if FE == True:
                     update.message.reply_text('✔️ '+afkapp_bcbot_71)
                     os.startfile("BtsCloseVPS.exe")
@@ -394,7 +395,7 @@ if telegramIntegration == True:
             ['allrest', send_allrest],
             ['pause', send_pause],
             ['continue', send_continue],
-            ['closerdp', send_closerdp],
+            ['closerdp', send_closevps],
             ['stop', send_stop]
         ]
 
