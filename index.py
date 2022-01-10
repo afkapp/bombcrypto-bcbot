@@ -238,6 +238,8 @@ try:
     afkapp_bcbot_68 = streamLang['afkapp_bcbot_68']
     afkapp_bcbot_69 = streamLang['afkapp_bcbot_69']
     afkapp_bcbot_70 = streamLang['afkapp_bcbot_70']
+    afkapp_bcbot_71 = streamLang['afkapp_bcbot_71']
+    afkapp_bcbot_72 = streamLang['afkapp_bcbot_72']
 
     
 except FileNotFoundError:
@@ -353,6 +355,17 @@ if telegramIntegration == True:
                 update.message.reply_text('💡 '+afkapp_bcbot_65)
                 #update.message.reply_text('✔️ '+afkapp_bcbot_67)
 
+        def send_closerdp(update: Update, context: CallbackContext) -> None:
+            update.message.reply_text('🔃 '+afkapp_bcbot_07)
+            if os.name != 'nt':
+                update.message.reply_text('⚠️ '+afkapp_bcbot_72)
+            elif os.name == 'nt':
+                #update.message.reply_text('✔️ '+afkapp_bcbot_71)
+                #fileName = r"closerdp"
+                #os.path.isfile(fileName)
+                #
+                update.message.reply_text('💡 '+afkapp_bcbot_65)
+
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
             os._exit(0)
@@ -371,6 +384,7 @@ if telegramIntegration == True:
             ['allrest', send_allrest],
             ['pause', send_pause],
             ['continue', send_continue],
+            ['closerdp', send_closerdp],
             ['stop', send_stop]
         ]
 
