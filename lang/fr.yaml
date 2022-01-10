@@ -11,7 +11,7 @@
   afkapp_bcbot_10: "Merci!"
   afkapp_bcbot_11: "Rejoignez-nous sur le groupe Telegram BCBOT:"
   afkapp_bcbot_12: "BTS Herald est un service de surveillance, qui vous avertira si le BOT/Farm cesse de fonctionner. Commencez gratuitement dès maintenant: \n\n https://www.btscenter.net/bts-herald"
-  afkapp_bcbot_13: "BTS IT Solutions est un hébergeur opérant sur internet depuis 2008. Avec un service VPS, votre BOT fonctionne 24h/24 et 7j/7 dans notre structure, sans dépendre de votre ordinateur/portable, vous pouvez accéder de n'importe où par connexion à distance, cela vous évite de devoir acheter du matériel exclusivement pour le BOT, et les risques des pertes avec des coupures internet et de courant qui surviennent dans un usage domestique. Nous livrons le VPS avec BCBOT pré-installé. Farmez comme un PRO:"
+  afkapp_bcbot_13: "BTS IT Solutions est un hébergeur opérant sur internet depuis 2008. Avec un service VPS, votre BOT fonctionne 24h/24 et 7j/7 dans notre structure, sans dépendre de votre ordinateur/portable, vous pouvez accéder de n'importe où par connexion à distance, cela vous évite de devoir acheter du matériel exclusivement pour le BOT, et les risques des pertes avec des coupures internet et de courant qui surviennent dans un usage domestique. Nous livrons le VPS avec BCBOT pré-installé. Farmez comme un PRO: \n\n https://www.btscenter.net/vps-linux"
   afkapp_bcbot_14: "Fermeture du BOT..."
   afkapp_bcbot_15: "Bot non initialisé, voir fichier de configuration"
   afkapp_bcbot_16: "Erreur lors de l'envoi de messages Telegram. Verifiez vos fichiers de configuration."
