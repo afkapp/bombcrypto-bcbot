@@ -20,9 +20,16 @@ Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
 5) Rename EXAMPLE-config.yaml to config.yaml (inside of directory config).
 6) Rename EXAMPLE-telegram.yaml to telegram.yaml (inside of directory config).
 7) Open the command prompt (CMD) as administrator.
-8) Go to your BCBOT directory, in our suggestion: cd C:\BCBOT
-9) RUN: pip install -r requirements.txt --force
-10) DONE. RUN BCBOT: 
+8) Install requirements:
+
+```
+cd C:\BCBOT && pip install -r requirements.txt --force
+```
+
+![requirements](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/requirementswindows.png)
+
+
+9) DONE. RUN BCBOT: 
 
 ```
 cd C:\BCBOT && python index.py
