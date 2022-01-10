@@ -5,7 +5,7 @@
   afkapp_bcbot_04: "Error: Please update the config.yaml file."
   afkapp_bcbot_05: "Info: Telegram not configure, rename EXAMPLE-telegram.yaml to telegram.yaml"
   afkapp_bcbot_06: "Initializing Telegram..."
-  afkapp_bcbot_07: "Proccessing..."
+  afkapp_bcbot_07: "Processing..."
   afkapp_bcbot_08: "Get your Chat-ID:"
   afkapp_bcbot_09: "An error has occurred"
   afkapp_bcbot_10: "Thank You!"
