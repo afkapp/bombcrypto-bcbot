@@ -35,7 +35,7 @@ cd C:\BCBOT && pip install -r requirements.txt --force
 cd C:\BCBOT && python index.py
 ```
 
-![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwindows.png)
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbot-windows.png)
 
 ### MULTI ACCOUNT **5 PER BOT** --> VERSION BETA<-- (WINDOWS):
 
@@ -46,7 +46,7 @@ cd C:\BCBOT && python index.py
 cd C:\BCBOT && python index.py
 ```
 
-![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbotwindows.png)
+![run](https://raw.githubusercontent.com/afkapp/bombcrypto-bcbot/main/images/readme/runbcbot-windows.png)
 
 **NOTES**
 - We get better results with Firefox.
