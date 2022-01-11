@@ -205,8 +205,8 @@
   # [pt_BR] distancia em pixels para clickar no botão work
   #
   offsets:
-    work_button: [90,110]           # [min value, max value]
-    work_button_full: [60,80]       # [min value, max value]
+    work_button: [120,140]           # [min value, max value]
+    work_button_full: [90,110]       # [min value, max value]
     work_button_all: [10,50]         # [min value, max value]
     character_indicator: [100,200]   # [min value, max value]
 
