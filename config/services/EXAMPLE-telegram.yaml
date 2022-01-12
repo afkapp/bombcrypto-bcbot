@@ -37,21 +37,28 @@
 #                                  .        .:-:
 
 # [en] TELEGRAM DISABLE = false | TELEGRAM ENABLE = true
-# [pt_BR] TELEGRAM DESABILITADO = false | TELEGRAM HABILITADO = true 
+# [pt_br] TELEGRAM DESABILITADO = false | TELEGRAM HABILITADO = true 
 telegram_enable: true
 
 # [en] Get your chat_id with the @btsherald_bot: https://t.me/btsherald_bot (send /id)
-# [pt_BR] Pegue o chat_id com o @btsherald_bot: https://t.me/btsherald_bot (envie /id)
-#
-chat_ids: ["0000000000"]
+# [pt_br] Pegue o chat_id com o @btsherald_bot: https://t.me/btsherald_bot (envie /id)
+# For 2 devices(Telegram) | chat_ids: ["YOUR_CHAT_ID_1", "YOUR_CHAT_ID_2"]
+chat_ids: ["0000000000"]  #-> Insert your Chat-ID
 
 # [en] Get your token with the @botfather: https://t.me/botfather (send /newbot)
-# [pt_BR] Pegue o token com o @botfather: https://t.me/botfather (envie /newbot)
+# [pt_br] Pegue o token com o @botfather: https://t.me/botfather (envie /newbot)
 botfather_token: "000000000000:0000000000000000000000000" #-> Insert your BOT FATHER TOKEN
 
 # [en] REPORT DISABLE = false | REPORT ENABLE = true
-# [pt_BR] RELATÓRIO DESABILITADO = false | RELATÓRIO HABILITADO = true
+# [pt_br] RELATÓRIO DESABILITADO = false | RELATÓRIO HABILITADO = true
 enable_coin_report: true
 enable_map_report: true
 
 format_of_image: "jpg"
+
+#********************************************************************************#
+#                                                                                #
+#                 IMPORTANT: Rename this file for telegram.yaml                  #
+#             IMPORTANTE: Renomear este arquivo para telegram.yaml               #
+#                                                                                #   
+#********************************************************************************#
