@@ -1253,10 +1253,12 @@ def bcbotmaw():
 
         for last in windows:
             try:
+                last["window"].maximize()
                 last["window"].activate()
             except:
                 last["window"].minimize()
                 last["window"].maximize()
+                last["window"].activate()
             time.sleep(2)
         
             if now - last["heroes"] > next_refresh_heroes * 60:
