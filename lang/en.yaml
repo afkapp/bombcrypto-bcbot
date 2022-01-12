@@ -59,7 +59,7 @@
   afkapp_bcbot_58: "New Threshold applied"
   afkapp_bcbot_59: "Multi account service is DISABLE."
   afkapp_bcbot_60: "Entering treasure hunt"
-  afkapp_bcbot_61: "Multi account feature is ENABLE on config.yaml."
+  afkapp_bcbot_61: "Multi account service is ENABLE."
   afkapp_bcbot_62: "Error: Multi Account (PyGetWindow): Trying to resolve, check your farm."
   afkapp_bcbot_63: "Commands: \n\n /id \n /print \n /map \n /bcoin \n /allwork \n /allrest \n /refresh \n /pause - Pause the bot \n /continue - Unpause the bot \n\n /closevps - Close VPS *Premium \n\n /stop - Stop the bot \n\n /invite - Join us on Telegram \n /donation - Donate to help the project \n\n /vps - Get a VPS with BCBOT installed \n /herald - Monitoring Service"
   afkapp_bcbot_64: "Successfully concluded."
