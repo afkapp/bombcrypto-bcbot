@@ -57,7 +57,7 @@
   afkapp_bcbot_56: "available, please update"
   afkapp_bcbot_57: "Version not found, update is required"
   afkapp_bcbot_58: "New Threshold applied"
-  afkapp_bcbot_59: "Multi account feature is DISABLE on config.yaml."
+  afkapp_bcbot_59: "Multi account service is DISABLE."
   afkapp_bcbot_60: "Entering treasure hunt"
   afkapp_bcbot_61: "Multi account feature is ENABLE on config.yaml."
   afkapp_bcbot_62: "Error: Multi Account (PyGetWindow): Trying to resolve, check your farm."
