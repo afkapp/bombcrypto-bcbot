@@ -1252,12 +1252,11 @@ def bcbotmaw():
                 logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
 
         for last in windows:
-            last["window"].activate()
-            #try:
-             #   last["window"].activate()
-            #except:
-               # last["window"].minimize()
-                #last["window"].maximize()
+            try:
+                last["window"].activate()
+            except:
+                last["window"].minimize()
+                last["window"].maximize()
             time.sleep(2)
         
             if now - last["heroes"] > next_refresh_heroes * 60:
