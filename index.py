@@ -89,33 +89,50 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.5' #Required config version
+config_version = '1.7.0' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-herald_active= streamConfig['herald_active']
-key_herald = streamConfig['key-herald']
-herald_label = streamConfig['label']
-multi_account = streamConfig['multi-account']
+
 PT = configTimeIntervals['Pause_Time']
 PWAR = configTimeIntervals['Pause_With_All_Rest']
 
 telegramIntegration = False
 try:
-    stream = open("./config/telegram.yaml", 'r', encoding='utf8')
+    stream = open("./config/services/telegram.yaml", 'r', encoding='utf8')
     streamConfigTelegram = yaml.safe_load(stream)
     telegramIntegration = streamConfigTelegram['telegram_enable']
-    telegramChatId = streamConfigTelegram['telegram_chat_id']
-    telegramBotToken = streamConfigTelegram['telegram_bot_token']
+    telegramChatId = streamConfigTelegram['chat_ids']
+    telegramBotToken = streamConfigTelegram['botfather_token']
     telegramCoinReport = streamConfigTelegram['enable_coin_report']
     telegramMapReport = streamConfigTelegram['enable_map_report']
-    telegramFormatImage = streamConfigTelegram['format_of_images']
+    telegramFormatImage = streamConfigTelegram['format_of_image']
     stream.close()
 except FileNotFoundError:
     print('Info: Telegram not configure, rename EXAMPLE-telegram.yaml to telegram.yaml')
+
+BtsHeraldIntegration = False
+try:
+    stream = open("./config/services/btsherald.yaml", 'r', encoding='utf8')
+    streamBtsHerald = yaml.safe_load(stream)
+    BtsHeraldIntegration= streamBtsHerald['herald_active']
+    bhid = streamBtsHerald['key-herald']
+    herald_label = streamBtsHerald['label']
+    stream.close()
+except FileNotFoundError:
+    print('Info: BTS Herald not configure, rename EXAMPLE-btsherald.yaml to btsherald.yaml')
+
+multi_account = False
+try:
+    stream = open("./config/services/multiaccount.yaml", 'r', encoding='utf8')
+    streamMA = yaml.safe_load(stream)
+    multi_account = streamMA['multi-account']
+    stream.close()
+except FileNotFoundError:
+    print('Info: Multi Account not configure, rename EXAMPLE-multiaccount.yaml to multiaccount.yaml')
 
 hc = HumanClicker()
 pyautogui.PAUSE = streamConfig['time_intervals']['interval_between_movements']
@@ -616,10 +633,23 @@ def sendallrestReport():
     clickButton(x_button_img)
     logger('All resting report sent', telegram=True, emoji='📄')
 
-#BTS Herald - Get a notification if the bot stops 
+#INTEGRATION WITH BTS HERALD - GET A NOTIFICATION IF THE BOT STOPS | https://herald.btscenter.net
 def herald():
-    if herald_active == True and key_herald != '':
-        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&lang='+afkapplang+'&label='+herald_label+'&key='+key_herald)
+    if BtsHeraldIntegration == True and bhid != '':
+        herald = requests.get('https://herald.btscenter.net/monitor/?app=BCBOT&lang='+afkapplang+'&label='+herald_label+'&bhid='+bhid)
+        #  --> You can DELETE the above line if you are not going to use the BTS Herald service: https://herald.btscenter.net
+
+        #  --> If you use the BTS Herald service, we'll collect the following data:
+        #
+        #  * afkapplang = Language used in your bot
+        #  * herald_label = The tag/name you chose for the bot on this machine
+        #  * bhid = Your BTS Herald Key
+        #
+        #  --> SCAM? Definitely not is a SCAM.
+        #  --> Are you claiming it is a SCAM?
+        #
+        # You're using open source scripts, copying the work of other, not contributing anything, talking nonsense and no proof.
+        # Envy kills, if you were creating something useful, wouldn't have time for this.
         
 def clickButton(img, name=None, timeout=3, threshold=configThreshold['default']):
     if not name is None:
