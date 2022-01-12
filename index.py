@@ -46,17 +46,18 @@ banner = """
 #─██░░░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░░░██─██░░░░░░░░░░██─────██░░██─────#
 #─████████████████─██████████████─████████████████─██████████████─────██████─────#
 #────────────────────────────────────────────────────────────────────────────────#
+#********           https://github.com/afkapp/bombcrypto-bcbot           ********#
 #********************************************************************************#
-#*********************** Please consider buying me a coffee *********************#
+#********************* Please consider buying me a coffee :) ********************#
 #********************************************************************************#
 #******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
 #********************************************************************************#
 
-           ---> Press CTRL+C to kill the bot or send /stop on Telegram.
-          ---> Some configs can be found in the /config/config.yaml file.
+            ---> Press CTRL+C to kill the bot or send /stop on Telegram.
+           ---> Instructions: https://github.com/afkapp/bombcrypto-bcbot
+              ---> Join Us on Telegram: https://t.me/bombcryptobcbot
 
-=================================================================================
-"""
+================================================================================="""
 
 print(banner)
 
@@ -87,7 +88,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.1.4' #Required config version
+config_version = '1.1.5' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -321,7 +322,7 @@ if telegramIntegration == True:
 
         def send_telegram_invite(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
-                f'💖 '+afkapp_bcbot_11+' https://t.me/+WXjrE1Kdb1U1Mzg0')
+                f'💖 '+afkapp_bcbot_11+' https://t.me/bombcryptobcbot')
 
         def send_herald(update: Update, context: CallbackContext) -> None:
             update.message.reply_text(
@@ -1260,7 +1261,7 @@ def main():
     checkUpdates()
     #input('Press Enter to start the bot...\n')
     #logger('Starting bot...', telegram=True, emoji='🤖')
-    logger(afkapp_bcbot_11+' https://t.me/+WXjrE1Kdb1U1Mzg0', telegram=True, emoji='💖')
+    logger(afkapp_bcbot_11+' https://t.me/bombcryptobcbot', telegram=True, emoji='💖')
     logger(afkapp_bcbot_63, telegram=True, emoji='ℹ️')
 
     if multi_account != True and os.name == 'nt':
