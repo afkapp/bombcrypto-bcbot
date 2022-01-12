@@ -9,7 +9,7 @@ Logs in to the game, reconnects when needed, closes error warnings, sends heroes
 
 It's free, open source, WITHOUT technical support, compatible with Windows and Linux (except multi account on Linux).
 
-Telegram: https://t.me/+WXjrE1Kdb1U1Mzg0
+Telegram: https://t.me/bombcryptobcbot
 
 ### HOW TO INSTALL BCBOT FOR SINGLE ACCOUNT (WINDOWS):
 
