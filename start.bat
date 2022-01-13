@@ -1,3 +1,3 @@
 timeout 10
 
-python index.py
+python ./src/process/forever.py
