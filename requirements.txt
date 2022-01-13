@@ -1,4 +1,5 @@
 mss==6.1.0
+colorama==0.4.4
 numpy==1.21.4
 opencv_python==4.5.4.60
 PyAutoGUI==0.9.53
