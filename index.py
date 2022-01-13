@@ -63,7 +63,6 @@ banner = """
 print(banner)
 
 Pause=[]
-windows = []
 
 def readConfig():
     with open("./config/config.yaml", 'r', encoding='utf8') as s:
@@ -647,6 +646,10 @@ def herald():
         #  * bhid = Your BTS Herald Key
         #
         #  --> SCAM? Definitely not is a SCAM.
+        #  --> Are you claiming it is a SCAM?
+        #
+        # You're using open source scripts, copying the work of other, not contributing anything, talking nonsense and no proof.
+        # Envy kills, if you were creating something useful, wouldn't have time for this.
         
 def clickButton(img, name=None, timeout=3, threshold=configThreshold['default']):
     if not name is None:
@@ -1178,6 +1181,8 @@ def bcbotsingle():
         if len(ps) == 1:
             logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
             time.sleep(PT*60)
+            if len(ps) == 0:
+                logger('Debug of continue', telegram=True, emoji='🤖') #Test
             if len(ps) == 1:
                 Pause.remove(1)
                 logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
@@ -1215,17 +1220,12 @@ def bcbotsingle():
         checkThreshold()
 
 def bcbotmaw():
-    ps=PauseStatus()
-    if len(ps) == 1:
-        logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
-        time.sleep(PT*60)
-    if len(ps) == 1:
-        Pause.remove(1)
-        logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
+    print(afkapp_bcbot_61)
 
-    try:
-        for w in bcbotma.getWindowsWithTitle('bombcrypto'):
-            windows.append({
+    windows = []
+    
+    for w in bcbotma.getWindowsWithTitle('bombcrypto'):
+        windows.append({
             "window": w,
             "login" : 0,
             "heroes" : 0,
@@ -1233,22 +1233,34 @@ def bcbotmaw():
             "refresh_heroes" : 0
             })
 
-        while True:
-            if currentScreen() == "login":
-                login()
+    while True:
+        if currentScreen() == "login":
+            login()
 
-            now = time.time()
+        handleError()
+
+        now = time.time()
         
-            for last in windows:
-                try:
-                    last["window"].maximize()
-                    last["window"].activate()
-                except:
-                    last["window"].minimize()
-                    last["window"].maximize()
-                    last["window"].activate()
-            time.sleep(2)
+        ps=PauseStatus()
+        if len(ps) == 1:
+            logger(afkapp_bcbot_66, telegram=True, emoji='🤖')
+            time.sleep(PT*60)
+            if len(ps) == 0:
+                logger('Debug of continue', telegram=True, emoji='🤖') #Test
+            if len(ps) == 1:
+                Pause.remove(1)
+                logger(afkapp_bcbot_67, telegram=True, emoji='🤖')
 
+        for last in windows:
+            try:
+                last["window"].maximize()
+                last["window"].activate()
+            except:
+                last["window"].minimize()
+                last["window"].maximize()
+                last["window"].activate()
+            time.sleep(2)
+        
             if now - last["heroes"] > next_refresh_heroes * 60:
                 last["heroes"] = now
                 last["refresh_heroes"] = now
@@ -1271,23 +1283,17 @@ def bcbotmaw():
             if now - last["refresh_heroes"] > next_refresh_heroes_positions * 60:
                 last["refresh_heroes"] = now
                 refreshHeroesPositions()
-            
-            handleError()
-
-            sys.stdout.flush()
-            time.sleep(1)
 
             checkLogout()
+            sys.stdout.flush()
+            time.sleep(general_check_time)
             checkThreshold()
-
-    except PyGetWindowException:
-        bcbotmaw()
 
 def main():
 
     checkUpdates()
     #input('Press Enter to start the bot...\n')
-    logger('Starting bot...', telegram=True, emoji='🤖')
+    #logger('Starting bot...', telegram=True, emoji='🤖')
     logger(afkapp_bcbot_11+' https://t.me/bombcryptobcbot', telegram=True, emoji='💖')
     logger(afkapp_bcbot_63, telegram=True, emoji='ℹ️')
 
@@ -1295,7 +1301,6 @@ def main():
         bcbotsingle() 
     
     if multi_account == True and os.name == 'nt':
-        print(afkapp_bcbot_61)
         bcbotmaw() 
 
     if os.name == 'posix':
