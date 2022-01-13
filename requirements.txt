@@ -1,5 +1,8 @@
-mss==6.1.0
+autopep8==1.6.0
 colorama==0.4.4
+deepdiff==5.7.0
+Pillow==8.4.0
+mss==6.1.0
 numpy==1.21.4
 opencv_python==4.5.4.60
 PyAutoGUI==0.9.53
