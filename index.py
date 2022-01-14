@@ -2,6 +2,7 @@ from cv2 import cv2
 from pyclick import HumanClicker
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
+from colorama import init, Fore, Style
 import numpy as np
 import mss
 import pyautogui
@@ -60,7 +61,7 @@ banner = """
 
 ================================================================================="""
 
-print(banner)
+print(Fore.GREEN + banner + Style.RESET_ALL)
 
 Pause=[]
 
@@ -89,7 +90,7 @@ except KeyError:
     print('Erro: Por favor atualize o arquivo config.yaml.')
     exit()
 
-config_version = '1.7.0' #Required config version
+config_version = '1.7.4' #Required config version
 
 if config_version > config_version_local:
     print('Error: Please update the config.yaml file.')
@@ -1293,7 +1294,7 @@ def main():
 
     checkUpdates()
     #input('Press Enter to start the bot...\n')
-    #logger('Starting bot...', telegram=True, emoji='🤖')
+    logger('Starting bot...', telegram=True, emoji='🤖')
     logger(afkapp_bcbot_11+' https://t.me/bombcryptobcbot', telegram=True, emoji='💖')
     logger(afkapp_bcbot_63, telegram=True, emoji='ℹ️')
 
