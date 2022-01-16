@@ -1,2 +1,2 @@
 #!/bin/sh
-python ./src/process/forever.py
+python3 ./src/process/forever.py
