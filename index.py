@@ -2,7 +2,6 @@ from cv2 import cv2
 from pyclick import HumanClicker
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
-from colorama import init, Fore, Style
 import numpy as np
 import mss
 import pyautogui
@@ -13,17 +12,15 @@ if os.name == 'nt':
     import pygetwindow as bcbotma
     from pygetwindow import PyGetWindowException
 
+from colorama import init, Fore, Style
+init()
+
 if os.name == 'posix':
-    print('The multi account will be Linux compatible after the project receives $500 in donations.')
-    print('O multi account será compatível com Linux após o projeto receber $500 em doações.')
-    print('سيكون الحساب المتعدد متوافقًا مع Linux بعد أن يتلقى المشروع تبرعات بقيمة 500 دولار.')
-    print('BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a')
-    print('https://github.com/afkapp/bombcrypto-bcbot')
+    print(Fore.YELLOW +'The multi account is only supported on Windows OS.\nO multi account é compatível somente com Windows.', Style.RESET_ALL)
     input('Press Enter to continue without multi account...\n') 
 
 if os.name != 'nt' and os.name != 'posix':
-    print('Your operating system is unsupported. ')
-    print('O seu sistema operacional não é compatível. ')
+    print(Fore.RED +'Your operating system is unsupported.\nO seu sistema operacional não é compatível.', Style.RESET_ALL)
     os._exit(0)
 
 import time
@@ -32,34 +29,36 @@ import yaml
 import random
 import requests
 
-banner = """
-#******************************* BombCrypto Bot *********************************#
-#────────────────────────────────────────────────────────────────────────────────#
-#─██████████████───██████████████─██████████████───██████████████─██████████████─#
-#─██░░░░░░░░░░██───██░░░░░░░░░░██─██░░░░░░░░░░██───██░░░░░░░░░░██─██░░░░░░░░░░██─#
-#─██░░██████░░██───██░░██████████─██░░██████░░██───██░░██████░░██─██████░░██████─#
-#─██░░██──██░░██───██░░██─────────██░░██──██░░██───██░░██──██░░██─────██░░██─────#
-#─██░░██████░░████─██░░██─────────██░░██████░░████─██░░██──██░░██─────██░░██─────#
-#─██░░░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░░░██─██░░██──██░░██─────██░░██─────#
-#─██░░████████░░██─██░░██─────────██░░████████░░██─██░░██──██░░██─────██░░██─────#
-#─██░░██────██░░██─██░░██─────────██░░██────██░░██─██░░██──██░░██─────██░░██─────#
-#─██░░████████░░██─██░░██████████─██░░████████░░██─██░░██████░░██─────██░░██─────#
-#─██░░░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░░░██─██░░░░░░░░░░██─────██░░██─────#
-#─████████████████─██████████████─████████████████─██████████████─────██████─────#
-#────────────────────────────────────────────────────────────────────────────────#
-#                                                                                #
-#********           https://github.com/afkapp/bombcrypto-bcbot           ********#
-#********       Join Us on Telegram: https://t.me/bombcryptobcbot        ********#
-#                                                                                #
-#********************************************************************************#
-#********************* Please consider buying me a coffee :) ********************#
-#********************************************************************************#
-#******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********#
-#********************************************************************************#
+banner = ("""
+	
+******************************* BombCrypto Bot *********************************
+────────────────────────────────────────────────────────────────────────────────
+─██████████████───██████████████─██████████████───██████████████─██████████████─
+─██░░░░░░░░░░██───██░░░░░░░░░░██─██░░░░░░░░░░██───██░░░░░░░░░░██─██░░░░░░░░░░██─
+─██░░██████░░██───██░░██████████─██░░██████░░██───██░░██████░░██─██████░░██████─
+─██░░██──██░░██───██░░██─────────██░░██──██░░██───██░░██──██░░██─────██░░██─────
+─██░░██████░░████─██░░██─────────██░░██████░░████─██░░██──██░░██─────██░░██─────
+─██░░░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░░░██─██░░██──██░░██─────██░░██─────
+─██░░████████░░██─██░░██─────────██░░████████░░██─██░░██──██░░██─────██░░██─────
+─██░░██────██░░██─██░░██─────────██░░██────██░░██─██░░██──██░░██─────██░░██─────
+─██░░████████░░██─██░░██████████─██░░████████░░██─██░░██████░░██─────██░░██─────
+─██░░░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░░░██─██░░░░░░░░░░██─────██░░██─────
+─████████████████─██████████████─████████████████─██████████████─────██████─────
+────────────────────────────────────────────────────────────────────────────────
+                                                                                
+********           https://github.com/afkapp/bombcrypto-bcbot           ********
+********       Join Us on Telegram: https://t.me/bombcryptobcbot        ********
+                                                                                
+********************************************************************************
+********************* Please consider buying me a coffee :) ********************
+********************************************************************************
+******** BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a ********
+********************************************************************************
 
             ---> Press CTRL+C to kill the bot or send /stop on Telegram.
 
-================================================================================="""
+*******************************************************************************                           
+	""")
 
 print(Fore.GREEN + banner + Style.RESET_ALL)
 
@@ -79,22 +78,19 @@ try:
     chestData = streamConfig['value_chests']
     offsets = streamConfig['offsets']
 except FileNotFoundError:
-    print('Error: config.yaml file not found, rename EXAMPLE-config.yaml to config.yaml inside /config folder')
-    print('Erro: Arquivo config.yaml não encontrado, renomear EXAMPLE-config.yaml para config.yaml dentro da pasta /config')
+    print(Fore.RED +'Error: config.yaml file not found, rename EXAMPLE-config.yaml to config.yaml inside /config folder \nErro: Arquivo config.yaml não encontrado, renomear EXAMPLE-config.yaml para config.yaml dentro da pasta /config', Style.RESET_ALL)
     exit()
 
 try:
     config_version_local = streamConfig['version']
 except KeyError:
-    print('Error: Please update the config.yaml file.')
-    print('Erro: Por favor atualize o arquivo config.yaml.')
+    print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
     exit()
 
-config_version = '1.7.4' #Required config version
+config_version = '1.7.5' #Required config version
 
 if config_version > config_version_local:
-    print('Error: Please update the config.yaml file.')
-    print('Erro: Por favor atualize o arquivo config.yaml.')
+    print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
     exit()
 
 
@@ -111,9 +107,14 @@ try:
     telegramCoinReport = streamConfigTelegram['enable_coin_report']
     telegramMapReport = streamConfigTelegram['enable_map_report']
     telegramFormatImage = streamConfigTelegram['format_of_image']
+    heroesClickedTelegram = streamConfigTelegram['heroes_clicked_telegram']
     stream.close()
 except FileNotFoundError:
     print('Info: Telegram not configure, rename EXAMPLE-telegram.yaml to telegram.yaml')
+    heroesClickedTelegram = True
+except KeyError:
+    print(Fore.RED +'Error: Please update the telegram.yaml file. \nErro: Por favor atualize o arquivo telegram.yaml', Style.RESET_ALL)
+    exit()
 
 BtsHeraldIntegration = False
 try:
@@ -437,7 +438,7 @@ def sendTelegramMessage(message):
             for chat_id in telegramChatId:
                 TBot.send_message(text=message, chat_id=chat_id)
     except:
-        # logger('Error to send telegram message. See configuration file', emoji='📄')
+        #logger(afkapp_bcbot_16, emoji='📄')
         return
 
 def sendTelegramPrint():
@@ -911,10 +912,11 @@ def goToTreasureHunt():
     if currentScreen() == "main":
         clickButton(teasureHunt_icon_img)
     if currentScreen() == "character":
+        herald()
         if clickButton(x_button_img):
             sleep(1, 3)
             clickButton(teasureHunt_icon_img)
-            herald()
+            #herald()
     if currentScreen() == "unknown" or currentScreen() == "login":
         checkLogout()
 
@@ -1048,23 +1050,22 @@ def getMoreHeroes():
             scroll()
         sleep(1, 3)
     logger('{} '.format(
-        heroes_clicked_total)+afkapp_bcbot_48, telegram=True, emoji='🦸')
+        heroes_clicked_total)+afkapp_bcbot_48, telegram=heroesClickedTelegram, emoji='🦸')
     goToTreasureHunt()
 
 def checkLogout():
     if currentScreen() == "unknown" or currentScreen() == "login":
         if positions(connect_wallet_btn_img) is not False:
             sendTelegramPrint()
-            logger('Logout detected', telegram=True, emoji='😿')
-            logger('Refreshing page', telegram=True, emoji='🔃')
-            # pyautogui.hotkey('ctrl', 'f5')
+            logger(afkapp_bcbot_49, telegram=True, emoji='😿')
+            logger(afkapp_bcbot_43, telegram=True, emoji='🔃')
             pyautogui.hotkey('ctrl', 'shift', 'r')
             waitForImage(connect_wallet_btn_img)
             login()
         elif positions(sign_btn_img):
-            logger('Sing button detected', telegram=True, emoji='✔️')
+            logger(afkapp_bcbot_50, telegram=True, emoji='✔️')
             if clickButton(metamask_cancel_button):
-                logger('Metamask is glitched, fixing',
+                logger(afkapp_bcbot_41,
                        telegram=True, emoji='🙀')
         else:
             return False
@@ -1158,10 +1159,10 @@ def checkThreshold():
 
     if newConfigThreshold != configThreshold:
         configThreshold = newConfigThreshold
-        logger('New Threshold applied', telegram=False, emoji='⚙️')
+        logger(afkapp_bcbot_58, telegram=False, emoji='⚙️')
 
 def bcbotsingle():
-    print(afkapp_bcbot_59)
+    print(Fore.YELLOW +afkapp_bcbot_59, Style.RESET_ALL)
     last = {
         "login": 0,
         "heroes": 0,
@@ -1221,7 +1222,7 @@ def bcbotsingle():
         checkThreshold()
 
 def bcbotmaw():
-    print(afkapp_bcbot_61)
+    print(Fore.GREEN +afkapp_bcbot_61, Style.RESET_ALL)
 
     windows = []
     
