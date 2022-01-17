@@ -1,1 +1,1 @@
-mstsc.exe /w:1366 /h:768
+mstsc.exe /w:1600 /h:900
