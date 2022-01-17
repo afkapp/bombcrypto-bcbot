@@ -148,10 +148,10 @@
     super_legendary: 0.8
 
     # [en_US]
-    # Default value: 0.6
+    # Default value: 0.62
     #
     # [pt_BR]
-    # Valor padrão: 0.6
+    # Valor padrão: 0.62
     error: 0.62
 
     # [en_US]
