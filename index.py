@@ -87,7 +87,7 @@ except KeyError:
     print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
     exit()
 
-config_version = '1.7.5' #Required config version
+config_version = '1.7.6' #Required config version
 
 if config_version > config_version_local:
     print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
