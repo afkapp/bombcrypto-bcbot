@@ -47,7 +47,7 @@
     #
     # [pt_BR] Intervalo de tempo para atualizar a posição dos heróis no mapa
     # Valor padrão (em minutos): [3,5] [valor minimo, valor maximo]
-    refresh_heroes_positions: [3,5]
+    refresh_heroes_positions: [30,30]
 
     # [en_US] Time interval to check for new maps
     # Default value (in minutes): 2
@@ -61,7 +61,7 @@
     #
     # [pt_BR] Intervalo de tempo entre movimentos
     # Valor padrão (em segundos): 1
-    interval_between_movements: 1
+    interval_between_movements: 0
 
     # [en_US] BCBOT pause time
     # Default value (in minutes): 60 
@@ -152,7 +152,7 @@
     #
     # [pt_BR]
     # Valor padrão: 0.6
-    error: 0.6
+    error: 0.62
 
     # [en_US]
     # Default value: 0.8
@@ -210,8 +210,8 @@
   # Default value: 3
   #
   # [pt_BR]
-  # Valor padrão: 5
-  scroll_attempts: 5
+  # Valor padrão: 3
+  scroll_attempts: 3
 
   # [en_US]
   # Default value: true
@@ -286,4 +286,4 @@
 
   # [en] PLEASE DON'T CHANGE
   # [pt_br] POR FAVOR NÃO ALTERE
-  version: "1.7.4"
+  version: "1.7.5"
