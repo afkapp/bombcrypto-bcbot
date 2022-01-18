@@ -9,6 +9,6 @@ while True:
     if sys.platform != 'linux' and sys.platform != 'linux2':
         p = Popen("python .\index.py", shell=True)
     if sys.platform == 'linux' or sys.platform == 'linux2':
-        p = Popen("python3 .\index.py", shell=True)
+        p = Popen("cd - && cd - && python3 index.py", shell=True)
 
     p.wait() 
