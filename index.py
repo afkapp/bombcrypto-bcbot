@@ -87,7 +87,7 @@ except KeyError:
     print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
     exit()
 
-config_version = '1.7.6' #Required config version
+config_version = '1.7.5' #Required config version
 
 if config_version > config_version_local:
     print(Fore.RED +'Error: Please update the config.yaml file. \nErro: Por favor atualize o arquivo config.yaml', Style.RESET_ALL)
@@ -177,6 +177,8 @@ chest1 = cv2.imread('./images/targets/chest1.png')
 chest2 = cv2.imread('./images/targets/chest2.png')
 chest3 = cv2.imread('./images/targets/chest3.png')
 chest4 = cv2.imread('./images/targets/chest4.png')
+key_adventure = cv2.imread('./images/targets/key.png')
+prison = cv2.imread('./images/targets/prison.png')
 allwork = cv2.imread('./images/targets/all_work.png')
 allrest = cv2.imread('./images/targets/all_rest.png')
 common = cv2.imread('./images/targets/common.png')
@@ -463,6 +465,8 @@ def sendPossibleAmountReport(baseImage):
     c2 = len(positions(chest2, configThreshold['chest'], baseImage, True))
     c3 = len(positions(chest3, configThreshold['chest'], baseImage, True))
     c4 = len(positions(chest4, configThreshold['chest'], baseImage, True))
+    ckey = len(positions(key_adventure, configThreshold['chest'], baseImage, True))
+    cprison = len(positions(prison, configThreshold['chest'], baseImage, True))
 
     value1 = c1 * chestData["value_chest1"]
     value2 = c2 * chestData["value_chest2"]
@@ -478,6 +482,8 @@ def sendPossibleAmountReport(baseImage):
 🟣 - """+str(c2)+"""
 🟡 - """+str(c3)+"""
 🔵 - """+str(c4)+"""
+🔑 - """+str(ckey)+"""
+🎁 - """+str(cprison)+"""
 
 🤑 """+afkapp_bcbot_18+""" """+f'{total:.3f} BCoin'+"""
 """
