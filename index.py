@@ -264,6 +264,8 @@ try:
     afkapp_bcbot_71 = streamLang['afkapp_bcbot_71']
     afkapp_bcbot_72 = streamLang['afkapp_bcbot_72']
     afkapp_bcbot_73 = streamLang['afkapp_bcbot_73']
+    afkapp_bcbot_74 = streamLang['afkapp_bcbot_74']
+    afkapp_bcbot_75 = streamLang['afkapp_bcbot_75']
 
     
 except FileNotFoundError:
@@ -488,7 +490,12 @@ def sendPossibleAmountReport(baseImage):
 🤑 """+afkapp_bcbot_18+""" """+f'{total:.3f} BCoin'+"""
 """
     logger(report, telegram=True)
-
+    if cprison > 0:
+        logger(afkapp_bcbot_74, telegram=True, emoji='🎁')
+        #Notify by BTS Herald (Coming Soon)
+    
+    if ckey > 0:
+        logger(afkapp_bcbot_75, telegram=True, emoji='🔑')
 
 def sendBCoinReport():
     if telegramIntegration == False:
