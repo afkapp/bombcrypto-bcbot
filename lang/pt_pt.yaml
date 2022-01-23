@@ -1,5 +1,5 @@
   # Defina lang: 'pt_pt' dentro do arquivo config.yaml para usar o bot em português de Portugal
-  afkapp_bcbot_01: "O multi account será compatível com Linux após o projecto receber $500 em doações."
+  afkapp_bcbot_01: ""
   afkapp_bcbot_02: "BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a"
   afkapp_bcbot_03: "https://github.com/afkapp/bombcrypto-bcbot"
   afkapp_bcbot_04: "Erro: Por favor, actualize o arquivo config.yaml."
@@ -10,8 +10,8 @@
   afkapp_bcbot_09: "Ocorreu um erro"
   afkapp_bcbot_10: "Obrigado!"
   afkapp_bcbot_11: "Junte-se a nós no grupo do Telegram:"
-  afkapp_bcbot_12: "O BTS Herald é um serviço de monitorização, que irá notificar-te se o BOT/farm parou de funcionar. Comece hoje GRATUITAMENTE: \n\n https://www.btscenter.com.br/bts-herald"
-  afkapp_bcbot_13: "A BTS IT Solutions é um provedor de hospedagem que actua na internet desde 2008. Com um serviço de VPS, o seu BOT funciona 24/7 na nossa estrutura, sem depender do seu computador, você pode aceder de qualquer lugar por ligação remota, ainda evita de ter que comprar equipamento exclusivamente para o BOT e os riscos de ter prejuízo com a queda de energia e internet que ocorrem no uso doméstico. Entregamos optimizado e com o BCBOT instalado. Torne o seu farm profissional: \n\n https://www.btscenter.com.br/vps-linux"
+  afkapp_bcbot_12: "O BTS Herald é um serviço de monitorização, que irá notificar-te se o BOT/farm parou de funcionar. Comece hoje GRATUITAMENTE: \n\n https://www.btscenter.pt/bts-herald/"
+  afkapp_bcbot_13: "A BTS IT Solutions é um provedor de hospedagem que actua na internet desde 2008. Com um serviço de VPS, o seu BOT funciona 24/7 na nossa estrutura, sem depender do seu computador, você pode aceder de qualquer lugar por ligação remota, ainda evita de ter que comprar equipamento exclusivamente para o BOT e os riscos de ter prejuízo com a queda de energia e internet que ocorrem no uso doméstico. Entregamos optimizado e com o BCBOT instalado. Torne o seu farm profissional: \n\n https://www.btscenter.pt/vps-linux/"
   afkapp_bcbot_14: "A Desligar o bot..."
   afkapp_bcbot_15: "Bot não iniciado, veja o arquivo de configuração"
   afkapp_bcbot_16: "Erro ao enviar mensagem pelo Telegram. Verifique o arquivo de configuração"
