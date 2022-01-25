@@ -57,9 +57,9 @@ Do you liked? Please contribute to help the project stay free and receive update
 ### BUSD/BCOIN (BEP20): 0x8c38512beca8b0b06bf4e85f67ee64a7dcdaa11a
 
 ``` 
-- 27/Dec/21
+- 25/Jan/2022
              (15%)        (30%)         (50%)        (70%)      (85%)     (100%)
 [--------------|------------|-------------|------------|----------|---------] ($500)
         |
-       $45
+       $50
 ```
