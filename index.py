@@ -179,6 +179,7 @@ chest3 = cv2.imread('./images/targets/chest3.png')
 chest4 = cv2.imread('./images/targets/chest4.png')
 key_adventure = cv2.imread('./images/targets/key.png')
 prison = cv2.imread('./images/targets/prison.png')
+rock = cv2.imread('./images/targets/rock.png')
 allwork = cv2.imread('./images/targets/all_work.png')
 allrest = cv2.imread('./images/targets/all_rest.png')
 common = cv2.imread('./images/targets/common.png')
@@ -469,6 +470,7 @@ def sendPossibleAmountReport(baseImage):
     c4 = len(positions(chest4, configThreshold['chest'], baseImage, True))
     ckey = len(positions(key_adventure, configThreshold['chest'], baseImage, True))
     cprison = len(positions(prison, configThreshold['chest'], baseImage, True))
+    crock = len(positions(rock, configThreshold['chest'], baseImage, True))
 
     value1 = c1 * chestData["value_chest1"]
     value2 = c2 * chestData["value_chest2"]
@@ -476,6 +478,7 @@ def sendPossibleAmountReport(baseImage):
     value4 = c4 * chestData["value_chest4"]
 
     total = value1 + value2 + value3 + value4
+    total_items = c1 + c2 + c3 + c4 + crock + ckey + cprison
 
     report = """
 """+afkapp_bcbot_17+"""
@@ -484,8 +487,11 @@ def sendPossibleAmountReport(baseImage):
 🟣 - """+str(c2)+"""
 🟡 - """+str(c3)+"""
 🔵 - """+str(c4)+"""
+🪨 - """+str(crock)+"""
 🔑 - """+str(ckey)+"""
 🎁 - """+str(cprison)+"""
+
+🗺️ - """'Total: '+str(total_items)+"""
 
 🤑 """+afkapp_bcbot_18+""" """+f'{total:.3f} BCoin'+"""
 """
@@ -1145,7 +1151,7 @@ def checkUpdates():
     print(afkapp_bcbot_53+' ' + version)
 
     try:
-        streamVersionLocal = open("./config/version.yaml", 'r')
+        streamVersionLocal = open("./config/version.yaml", 'r', encoding='utf8')
         streamVersion = yaml.safe_load(streamVersionLocal)
         versionLocal = streamVersion['version']
         streamVersionLocal.close()
