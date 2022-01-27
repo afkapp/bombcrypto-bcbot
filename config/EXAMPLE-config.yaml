@@ -43,10 +43,10 @@
     send_heroes_for_work: [10,10]
     
     # [en_US] Time interval to update heroes position in the map
-    # Default value (in minutes): [3,5] [min value, max value]
+    # Default value (in minutes): [30,30] [min value, max value]
     #
     # [pt_BR] Intervalo de tempo para atualizar a posição dos heróis no mapa
-    # Valor padrão (em minutos): [3,5] [valor minimo, valor maximo]
+    # Valor padrão (em minutos): [30,30] [valor minimo, valor maximo]
     refresh_heroes_positions: [30,30]
 
     # [en_US] Time interval to check for new maps
@@ -187,7 +187,7 @@
     #
     # [pt_BR]
     # Valor padrão: 0.5
-    chest: 0.5
+    chest: 0.6
 
   # [en_US] distance in pixels to click the work button
   #
