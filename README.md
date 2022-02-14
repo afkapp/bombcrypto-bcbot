@@ -1,3 +1,14 @@
+## Terms of Service - Milestone
+
+``` 
+- 14/Feb/2022
+             (15%)        (30%)         (50%)        (70%)      (85%)     (100%)
+[--------------|------------|-------------|------------|----------|---------] ($100)
+ |
+ $0
+```
+
+
 # BCBOT Community Edition (BombCrypto BOT)
 **[en] Version FREE, open source and WITHOUT TECHNICAL SUPPORT.**
 
