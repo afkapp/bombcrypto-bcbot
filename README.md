@@ -7,6 +7,11 @@
  |
  $0
 ```
+BUSD(BEP20): 0x6c4876d78941b4cd46ccc75472f53e6fb4c4b225
+
+## Reason: Offense and ingratitude
+
+https://prnt.sc/26vk3vt
 
 
 # BCBOT Community Edition (BombCrypto BOT)
