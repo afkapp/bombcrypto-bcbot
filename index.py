@@ -157,6 +157,8 @@ x_button_img = cv2.imread('./images/targets/x.png')
 teasureHunt_icon_img = cv2.imread('./images/targets/treasure-hunt-icon.png')
 ok_btn_img = cv2.imread('./images/targets/ok.png')
 connect_wallet_btn_img = cv2.imread('./images/targets/connect-wallet.png')
+check_accept_btn_img = cv2.imread('./images/targets/accept.png')
+accept_btn_img = cv2.imread('./images/targets/check_accept.png')
 sign_btn_img = cv2.imread('./images/targets/metamask_sign.png')
 new_map_btn_img = cv2.imread('./images/targets/new_map_01.png')
 green_bar = cv2.imread('./images/targets/green-bar.png')
@@ -396,12 +398,12 @@ if telegramIntegration == True:
             if os.name != 'nt':
                 update.message.reply_text('⚠️ '+afkapp_bcbot_72)
             if os.name == 'nt':
-                FE = checkFileExist('BtsCloseVPS.exe')
+                FE = checkFileExist('BtsCloseVPS.bat')
                 if FE != True:
                     update.message.reply_text('🖥️ '+afkapp_bcbot_73)
                 if FE == True:
                     update.message.reply_text('✔️ '+afkapp_bcbot_71)
-                    os.startfile("BtsCloseVPS.exe")
+                    os.startfile("BtsCloseVPS.bat")
 
         def send_stop(update: Update, context: CallbackContext) -> None:
             logger(afkapp_bcbot_14, telegram=True, emoji='🛑')
@@ -905,6 +907,9 @@ def currentScreen():
     elif positions(connect_wallet_btn_img) is not False:
         # sys.stdout.write("\nlogin. ")
         return "login"
+    elif positions(check_accept_btn_img) is not False:
+        # sys.stdout.write("\nlogin. ")
+        return "login"
     elif positions(character_indicator) is not False:
         # sys.stdout.write("\ncharacter. ")
         return "character"
@@ -930,11 +935,15 @@ def goToHeroes():
 def goToTreasureHunt():
     if currentScreen() == "main":
         clickButton(teasureHunt_icon_img)
+        sleep(3, 5)
+        sendTelegramPrint()
     if currentScreen() == "character":
         herald()
         if clickButton(x_button_img):
             sleep(1, 3)
             clickButton(teasureHunt_icon_img)
+            sleep(3, 5)
+            sendTelegramPrint()
             #herald()
     if currentScreen() == "unknown" or currentScreen() == "login":
         checkLogout()
@@ -961,7 +970,15 @@ def login():
     global login_attempts
 
     randomMouseMovement()
+    
+    if clickButton(check_accept_btn_img):
+        logger(afkapp_bcbot_32, emoji='🎉')
+        time.sleep(2)
 
+    if clickButton(accept_btn_img):
+        logger(afkapp_bcbot_32, emoji='🎉')
+        time.sleep(2)
+        
     if clickButton(connect_wallet_btn_img):
         logger(afkapp_bcbot_32, emoji='🎉')
         time.sleep(2)
