@@ -157,6 +157,7 @@ x_button_img = cv2.imread('./images/targets/x.png')
 teasureHunt_icon_img = cv2.imread('./images/targets/treasure-hunt-icon.png')
 ok_btn_img = cv2.imread('./images/targets/ok.png')
 connect_wallet_btn_img = cv2.imread('./images/targets/connect-wallet.png')
+connect_wallet_btn_img01 = cv2.imread('./images/targets/connect-wallet01.png')
 check_accept_btn_img = cv2.imread('./images/targets/accept.png')
 accept_btn_img = cv2.imread('./images/targets/check_accept.png')
 sign_btn_img = cv2.imread('./images/targets/metamask_sign.png')
@@ -907,6 +908,9 @@ def currentScreen():
     elif positions(connect_wallet_btn_img) is not False:
         # sys.stdout.write("\nlogin. ")
         return "login"
+    elif positions(connect_wallet_btn_img01) is not False:
+        # sys.stdout.write("\nlogin. ")
+        return "login"
     elif positions(check_accept_btn_img) is not False:
         # sys.stdout.write("\nlogin. ")
         return "login"
@@ -980,8 +984,11 @@ def login():
         time.sleep(2)
         
     if clickButton(connect_wallet_btn_img):
+        logger(afkapp_bcbot_32, emoji='🎉')       
+        
+    if clickButton(connect_wallet_btn_img01):
         logger(afkapp_bcbot_32, emoji='🎉')
-        time.sleep(2)
+        time.sleep(2)   
         waitForImage((sign_btn_img, metamask_unlock_img), multiple=True)
 
     metamask_unlock_coord = positions(metamask_unlock_img)
