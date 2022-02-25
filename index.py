@@ -157,6 +157,7 @@ x_button_img = cv2.imread('./images/targets/x.png')
 teasureHunt_icon_img = cv2.imread('./images/targets/treasure-hunt-icon.png')
 ok_btn_img = cv2.imread('./images/targets/ok.png')
 connect_wallet_btn_img = cv2.imread('./images/targets/connect-wallet.png')
+connect_wallet_btn_ini_img = cv2.imread('./images/targets/connect-wallet2.png')
 sign_btn_img = cv2.imread('./images/targets/metamask_sign.png')
 new_map_btn_img = cv2.imread('./images/targets/new_map_01.png')
 green_bar = cv2.imread('./images/targets/green-bar.png')
@@ -961,8 +962,13 @@ def login():
     global login_attempts
 
     randomMouseMovement()
-
+	
     if clickButton(connect_wallet_btn_img):
+        logger(afkapp_bcbot_32, emoji='🎉')
+        time.sleep(2)
+        waitForImage(connect_wallet_btn_ini_img)
+
+    if clickButton(connect_wallet_btn_ini_img):
         logger(afkapp_bcbot_32, emoji='🎉')
         time.sleep(2)
         waitForImage((sign_btn_img, metamask_unlock_img), multiple=True)
